@@ -1,0 +1,130 @@
+
+.sheet-character-sheet{
+    display:block;
+    position:relative;
+    width:850px;
+    min-height:1300px;
+    margin:0 auto;
+    padding: 10px;
+    font-size:12px;
+    font-family:'Malgun Gothic';
+    line-height:1.2;
+    box-sizing:border-box;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background:#433849;
+    /* background-position: 567px 580px, 0px 240px, center top; */
+}
+
+/* .sheet-character-sheet::before{
+    content: "";
+    background: url(https://i.imgur.com/hRqbvR8.png);
+    background-size: contain;
+    opacity: 0.2;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+} */
+
+.inline {
+    display: inline;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.sheet-info-kind, .sheet-info-kind-img {
+    margin-left: 70px;
+}
+
+.sheet-info-kind-img > img{
+    width: 250px;
+    height: 400px;
+    background: black;
+    margin-top: 30px;
+}
+
+.chat_status{
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 2px 15px black;
+}
+
+.sheet-big-input{
+    height: 50px;
+}
+
+.sheet-number input {
+    color: #433849;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    background-color: #fff;
+    opacity: 0.9;
+    border-color: #433849;
+    border-width: 0;
+    text-align-last: center;
+    text-align: center;
+    appearance: none;
+    line-height: normal;
+    border-radius: 50px;
+    width: 45px !important;
+    height: 45px !important;
+    z-index: 1;
+}
+
+.sheet-function-number{
+    position: relative;
+}
+
+.sheet-number > .sheet-dice{
+    background-color: #433849;
+    position: relative;
+    left: -21px;
+    top: 10px;
+    height: 15px;
+    z-index: 2;
+}
+
+.action_table{
+    text-align: center;
+}
+
+.sheet-start-info{
+    width: 35%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.sheet-info_1{
+    background-repeat: no-repeat,no-repeat,no-repeat,no-repeat,no-repeat;
+    background-position: 50% 7%,50% 29%,50% 53%,50% 75%,50% 98%,75% 73%;
+    float: left;
+    width: 50%;
+    padding: 0 0 0 30px;
+    box-sizing: border-box;
+    background-color: transparent;
+    line-height: 40px;
+}
+.sheet-info-item {
+    padding: 5px 0;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.sheet-info-r .sheet-info-item textarea {
+    resize: none;
+    color: #433849;
+    height:100px;
+    background-color:transparent;
+    border-color:#433849;
+    border-width: 1px 1px 0 1px;
+}
