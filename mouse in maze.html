@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="mouse in maze.css">
+        <title>mouse</title>
+
+        <style>
+            /* #book {
+                width: 500px;
+                height: 200px;
+                margin: 80px;
+            } */
+
+            #pageSection {
+                position: relative;
+                width: 800px;
+                height: 800px;
+                margin-left: 30px;
+                perspective: 1000px;
+            }
+
+            .page {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding-left: 32px;
+                background-color: #f5dec1;
+                box-shadow: 0 0 2px rgba(0, 0, 0, 0.4), -2px 0 2px rgba(0, 0, 0, 0.4);
+                width: 100%;
+                height: 100%;
+            }
+
+            .content {
+                width: 100%;
+                height: 100%;
+                transition-duration: 1s;
+            }
+
+            #content1:hover {
+                opacity: 0;
+            }
+
+            #page1 {
+                z-index: 1;
+                transform-origin: left center;
+                transition-duration: 0.5s;
+                transition-timing-function: ease-in;
+            }
+
+            #page1:hover {
+                transform: rotateY(-80deg);
+            }
+
+            #page2 {
+                z-index: 0;
+            }
+
+            .chainSection {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                z-index: 10;
+            }
+
+            .chain {
+                display: flex;
+                align-items: center;
+                margin: 18px 0;
+            }
+
+            .chainFrame {
+                width: 20px;
+                height: 8px;
+                background-color: #616161;
+                display: inline-block;
+                z-index: 1;
+                border-radius: 0 8px 8px 0;
+            }
+
+            .chainCircle {
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background-color: #fff;
+                display: inline-block;
+                transform: translateX(-8px);
+                box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.4) inset;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div id="book">
+            <section id="pageSection">
+                <div class="page" id="page1">
+                    <div class="content" id="content1">
+                        <h2>첫 번째 페이지...</h2>
+                        <span>시트가 들어갈 곳</span>
+                    </div>
+                    <section class="chainSection"></section>
+                </div>
+
+                <div class="page" id="page2">
+                    <div class="content" id="contents">
+                        <h2>두 번째 페이지...</h2>
+                        <span>시트가 들어갈 곳</span>
+                    </div>
+                    <section class="chainSection"></section>
+                </div>
+            </section>
+        </div>
+
+        <!-- <div class="sheet-character-sheet">
+            <div>
+                <div class="sheet-info-kind-img">
+                    <img src="https://i.imgur.com/uSKknfZ.png">
+                </div>
+                <div class="sheet-info-kind">
+                    <span class="text-center">종족·직업</span>
+                    <button><img src="https://imgur.com/BPrYmAp.png"></button>
+                </div>
+            </div>
+            <div class="sheet-name">
+                <span>캐릭터 이름</span>
+            </div>
+        </div> -->
+
+        <!-- <rolltemplate class="sheet-rolltemplate-mwg"> <div
+        class="sheet-itemtemplate-container"> <div class="sheet-con"> {{#name}} <div
+        class="sheet-name"> <span>이름 {{name}}</span> </div> {{/name}} <div
+        class="sheet-con-inner"> {{#subject}} <div class="sheet-con-inner-img">
+        {{#dice}} <div class="sheet-dice-u"> <span class="sheet-dice">{{dice}}</span>
+        </div> {{/dice}} {{#rollTotal() subject 1}} <img
+        src="https://imgur.com/buK0UiT.png" alt="1" /> {{/rollTotal() subject 1}}
+        {{#rollTotal() subject 2}} <img src="https://imgur.com/c5Tcqut.png" alt="2" />
+        {{/rollTotal() subject 2}} {{#rollTotal() subject 3}} <img
+        src="https://imgur.com/hk9h4Fu.png" alt="3" /> {{/rollTotal() subject 3}}
+        {{#rollTotal() subject 4}} <img src="https://imgur.com/qHD0BRd.png" alt="4" />
+        {{/rollTotal() subject 4}} {{#rollTotal() subject 5}} <img
+        src="https://imgur.com/7rYu4SV.png" alt="5" /> {{/rollTotal() subject 5}}
+        {{#rollTotal() subject 6}} <img src="https://imgur.com/Xl9PPeQ.png" alt="6" />
+        {{/rollTotal() subject 6}} {{#rollTotal() subject 7}} <img
+        src="https://imgur.com/yBpOpk3.png" alt="7" /> {{/rollTotal() subject 7}}
+        {{#rollTotal() subject 8}} <img src="https://imgur.com/v5W0pYx.png" alt="8" />
+        {{/rollTotal() subject 8}} {{#rollTotal() subject 9}} <img
+        src="https://imgur.com/zFPbej8.png" alt="9" /> {{/rollTotal() subject 9}}
+        {{#rollTotal() subject 10}} <img src="https://imgur.com/2cj6Kcz.png" alt="10" />
+        {{/rollTotal() subject 10}} {{#rollTotal() subject 11}} <img
+        src="https://imgur.com/Ti7TH7B.png" alt="11" /> {{/rollTotal() subject 11}}
+        </div> {{/subject}} {{#contentsname}} <div class="sheet-contentsname">
+        <span>{{contentsname}}</span> </div> {{/contentsname}} {{#contents1}} <div
+        class="sheet-contents1"><span>{{contents1}}</span></div> {{/contents1}}
+        {{#contents2}} <div class="sheet-contents2"><span>{{contents2}}</span></div>
+        {{/contents2}} {{#contents3}} <div
+        class="sheet-contents3"><span>{{contents3}}</span></div> {{/contents3}} </div>
+        </div> </div> </rolltemplate> -->
+
+        <!-- {{#exsetting_roll}} <div class="sheet-exsetting-box"> {{#rollTotal()
+        emotion_roll 1}} <span class="app">옹골짐</span> <span class="app">사각턱</span> <span
+        class="app">섬세한 외모</span> <span class="app">흐느적거림</span> <span
+        class="app">깡마름</span> <span class="app">목이 굵음</span> {{/rollTotal()
+        emotion_roll 1}} {{#rollTotal() emotion_roll 2}} <span
+        class="app_mark">레게머리</span> <span class="app_mark">긴머리</span> <span
+        class="app_mark">피어싱</span> <span class="app_mark">햇볕에 탄 피부</span> <span
+        class="app_mark">점</span> <span class="app_mark">번들번들한 머리칼</span> {{/rollTotal()
+        emotion_roll 2}} {{#rollTotal() emotion_roll 3}} 뒷배경 행상인 점쟁이 내기 싸움꾼 문신 새기는 사람 미친
+        예언자 장물아비 <span class="sheet-p">애정</span> <span class="sheet-m">질투</span>
+        {{/rollTotal() emotion_roll 3}} {{#rollTotal() emotion_roll 4}} 옷차림 예복 무늬가 있음
+        표식이 그려짐 제복 격식을 차림 구겨진 옷 성격 주의 깊음 교활함 고집이 셈 고집이 셈 투지가 넘침 차분함 말버릇 잘 웃음 횡설수설 말수가 적음
+        솔직하게 말함 지나치게 태평함 장황하게 말함 돌연변이 점액 자취 추가 눈 새들을 모음 광기 공포(비) "천재야" 공포(책) 괴물 신체 특성 긴
+        혀 수많은 사지 뿔 괴물 특성 수정으로 된 몸 식인 젤리 같음 괴물 능력 생각 읽기 눈을 멀게 함 반사 <span
+        class="sheet-p">충성</span> <span class="sheet-m">모멸</span> {{/rollTotal()
+        emotion_roll 4}} {{#rollTotal() emotion_roll 5}} <span class="sheet-p">동경</span>
+        <span class="sheet-m">열등감</span> {{/rollTotal() emotion_roll 5}} {{#rollTotal()
+        emotion_roll 6}} <span class="sheet-p">광신</span> <span class="sheet-m">살의</span>
+        {{/rollTotal() emotion_roll 6}} </div> {{/exsetting_roll}} -->
+
+        <!-- <rolltemplate class="sheet-rolltemplate-MazeInMouse"> <div class="sheet-acc
+        sheet-top"></div><div class="sheet-acc sheet-left"></div><div class="sheet-acc
+        sheet-right"></div><div class="sheet-acc sheet-bottom"></div> <div
+        class="sheet-ins-default-con"> {{^Effect}} {{#subject}} <div
+        class="sheet-ins-tit"> {{#name}}<span>{{name}}</span>{{/name}}
+        <strong>{{subject}}</strong> </div> {{/subject}} {{#spec}} <div
+        class="sheet-ins-tit"> {{#name}}<span>{{name}}</span>{{/name}}
+        <strong>《{{spec}}》 판정</strong> </div> {{/spec}} <div class="sheet-ins-dice">
+        {{roll1}}+{{roll2}}{{#rollLess() mod 0}}{{mod}}{{/rollLess() mod
+        0}}{{#rollGreater() mod 0}}+{{mod}}{{/rollGreater() mod 0}} </div> <div
+        class="sheet-ins-rollresult"> {{#rollLess() roll1 2}} {{#rollLess() roll2 2}}
+        <span class="sheet-ins-fumble">펌블</span> {{/rollLess() roll2 2}} {{/rollLess()
+        roll1 2}} {{#rollGreater() roll1 5}} {{#rollGreater() roll2 5}} <span
+        class="sheet-ins-ciri">스페셜</span> {{/rollGreater() roll2 5}} {{/rollGreater()
+        roll1 5}} </div> {{#target}} <div class="sheet-ins-target"> 목표치 :
+        <em>{{target}}</em> </div> {{/target}} {{/Effect}} {{#Effect}} {{#subject}} <div
+        class="sheet-ins-tit {{^AssignedSkill}}noline{{/AssignedSkill}}">
+        {{#name}}<span>{{name}}</span>{{/name}} <strong>{{subject}}</strong> </div>
+        {{/subject}} {{#spec}} <div class="sheet-ins-tit">
+        {{#name}}<span>{{name}}</span>{{/name}} <strong>《{{spec}}》 판정</strong> </div>
+        {{/spec}} {{#AssignedSkill}} {{#roll1}} <div class="sheet-ins-dice">
+        {{roll1}}+{{roll2}}{{#rollLess() mod 0}}{{mod}}{{/rollLess() mod
+        0}}{{#rollGreater() mod 0}}+{{mod}}{{/rollGreater() mod 0}} </div> {{/roll1}}
+        <div class="sheet-ins-rollresult"> {{#rollLess() roll1 2}} {{#rollLess() roll2
+        2}} <span class="sheet-ins-fumble">펌블</span> {{/rollLess() roll2 2}}
+        {{/rollLess() roll1 2}} {{#rollGreater() roll1 5}} {{#rollGreater() roll2 5}}
+        <span class="sheet-ins-ciri">스페셜</span> {{/rollGreater() roll2 5}}
+        {{/rollGreater() roll1 5}} </div> {{#target}} <div class="sheet-ins-target"> 목표치
+        : <em>{{target}}</em> </div> {{/target}} {{/AssignedSkill}} <div
+        class="sheet-ins-effect"> {{#AssignedSkill}} <div
+        class="sheet-ins-effect-guide"> 지정특기 : <em>{{AssignedSkill}}</em> </div>
+        {{/AssignedSkill}} <div class="sheet-ins-effect-inner"> {{#Types}}<span
+        class="sheet-tag">{{Types}}</span>{{/Types}} {{Effect}} </div> </div>
+        {{/Effect}} </div> </rolltemplate> -->
+
+        <script type="text/javascript">
+            const chainSections = document.getElementsByClassName('chainSection');
+            const chain = `
+                    <div class="chain">
+                    <div class="chainFrame"></div>
+                    <div class="chainCircle"></div>
+                    </div>
+                `;
+
+            for (let i = 0; i < chainSections.length; i++) {
+                const chainSection = chainSections[i];
+
+                for (let j = 0; j < 5; j++) {
+                    chainSection.innerHTML += chain;
+                }
+            }
+        </script>
+
+    </body>
+</html>

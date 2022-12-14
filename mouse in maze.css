@@ -15,7 +15,7 @@
     /* background-position: 567px 580px, 0px 240px, center top; */
 }
 
-/* .sheet-character-sheet::before{
+.sheet-character-sheet::before{
     content: "";
     background: url(https://i.imgur.com/hRqbvR8.png);
     background-size: contain;
@@ -26,7 +26,7 @@
     right: 0px;
     bottom: 0px;
 
-} */
+}
 
 .inline {
     display: inline;
