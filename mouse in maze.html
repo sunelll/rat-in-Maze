@@ -13,25 +13,31 @@
                         <img>
                     </div>
                     <div class="sheet-info-kind">
-                        <!-- <span class="text-center">종족·직업</span> -->
                         <div>
                             <!-- 종족 및 직업 -->
-                            <div>
-                                <label for="">종족</label>
-                                <input type="text" name="attr_weapon">
-                                </br>
-                                <label for="">직업</label>
-                                <input type="text" name="attr_weapon">
+                            <div class="margin15">
+                              <input class="input width80" placeholder="종족" type="text" name="attr_kind">
+                              <span>/</span>
+                              <input class="input width80" placeholder="직업" type="text" name="attr_job">
                             </div>
 
-                            <div>
-                                <label for=""></label>
-                                <input type="text" name="attr_weapon">
+                            <!-- 플레이어블 교체 -->
+                            <div class="margin15">
+                              <label for="status_table">캐릭터</label>
+                              <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                                </label>
+                              <label for="status_table">NPC</label>
                             </div>
-                            <select name="" id="">
-                                <option value="player">플레이어</option>
-                                <option value="npc">NPC/괴물</option>
-                            </select>
+
+                              <!-- 자유 다이스 -->
+                              <div class="margin15">
+                                <span class="label">DICE</span>
+                                <div class="container">
+                                  <input type="text"  class="dice_input">
+                                </div>
+                              </div>
                         </div>
                     </div>
                 </div>
@@ -41,7 +47,7 @@
                       <!-- <h1>캐릭터 이름</h1> -->
                       <div>
                         <div class="sheet-name">
-                            <input type="text" name="attr_character_name">
+                            <input class="input" placeholder="캐릭터 이름" type="text" name="attr_character_name">
                           </div>
                           <div class="sheet-level">
                             <label for="status_table">레벨</label>
@@ -49,15 +55,39 @@
                             <input type="text" name="attr_character_level">
                           </div>
                       </div>
-                      <div class="sheet-player">
+                      <div class="sheet-player sheet-exp">
                         <label for="status_table">플레이어</label>
-                        <input type="text" name="attr_player">
-                      </div>
-                      <div class="sheet-exp">
+                        <input class="input width150" type="text" name="attr_player">
                         <label for="status_table">경험치</label>
-                        <input type="text" name="attr_exp">
+                        <input class="input width150" type="text" name="attr_exp">
+                        <label for="status_table"></label>
                       </div>
                 
+                      <div>
+                        <div class="sheet-status sheet-status-item">
+                          <div class="sheet-group">
+                            <strong class="maple">근력</strong>
+                            <input class="state_input" placeholder="0" type="number" name="attr_str" title="근력"/>
+                            <strong class="maple">공격</strong>
+                            <input class="state_input" type="number" name="attr_att" title="공격"/>
+                          </div>
+                          <div class="sheet-group">
+                            <strong class="maple">민첩</strong>
+                            <input class="state_input" type="number" name="attr_dex" title="민첩성"/>
+                            <strong class="maple">장갑</strong>
+                            <input class="state_input" type="number" name="attr_armor" title="장갑"/>
+                          </div>
+                          <div class="sheet-group">
+                            <strong class="maple">정신</strong>
+                            <input class="state_input" type="number" name="attr_pow" title="정신력"/>
+                            <strong class="maple">건강</strong>
+                            <input class="state_input" type="number" name="attr_con" title="건강"/>
+                          </div>
+                        </div>
+                      </div>
+                      
+                
+
                       <div>
                         <button type="roll" id="status_table" value="[능력치]()" alt="능력치"></button>
                       </div>
@@ -101,6 +131,18 @@
                     <div class="sheet-battle_inner">
                       <h3>전투장비</h3>
                       <div class="sheet-equipment">
+
+
+                    
+                        <div class="sheet-items">
+                          <span><img src="https://i.imgur.com/mgtfXRB.png" alt="" /></span>
+                          <input type="number" name="attr_ins_item1" placeholder="진통제" title="진통제">
+                          <span><img src="https://i.imgur.com/Gf1XU7T.png" alt="" /></span>
+                          <input type="number" name="attr_ins_item2" placeholder="무기" title="무기">
+                          <span><img src="https://i.imgur.com/3obfPrm.png" alt="" /></span>
+                          <input type="number" name="attr_ins_item3" placeholder="부적" title="부적">
+                        </div>
+
                         <input type="text" name="attr_weapon">
                         <input type="text" name="attr_armor">
                         <input type="text" name="attr_shield">
