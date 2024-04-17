@@ -12,8 +12,18 @@
     font-family: 'MaplestoryOTFBold', sans-serif;
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;
     color: #fff;
+    font-size: 24px;
+    -webkit-text-stroke: 1px black;
+    /* text-stroke: 1px black; */
+}
+
+.maple_font12{
+    font-family: 'MaplestoryOTFBold', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #fff;
+    font-size: 16px;
     -webkit-text-stroke: 1px black;
     /* text-stroke: 1px black; */
 }
@@ -21,6 +31,10 @@
 .arvo {
     font-family: 'Arvo';
     font-size: 18px;
+}
+
+.font26{
+    font-size: 26px;
 }
 
 .inline {
@@ -43,14 +57,40 @@
     width: 200px;
 }
 
+.width380 {
+    width: 380px;
+    height: 55px;
+}
+
 .margin15 {
     margin: 15px;
 }
 
+.margin_top10 {
+    margin-top: 10px;
+}
+
+.margin_top40 {
+    margin-top: 40px;
+}
+
+.margin_left10{
+    margin-left: 10px;
+}
+
+.margin_left15{
+    margin-left: 15px;
+}
+
+
+.margin_left55{
+    margin-left: 50px;
+}
 
 /****************************************************
 	Section1 : 
 ****************************************************/
+
 
 .input {
     background-color: transparent;
@@ -58,17 +98,22 @@
     border-bottom: 1px solid #CCC;
     color: #555;
     box-sizing: border-box;
-    height: 50px;
-    /* left: 10%; */
-    margin: 10px 0 0 0px;
-    padding: 10px 0px;
+    height: 25px;
     position: relative;
-    top: 50%;
     text-align: center;
 
     &:focus {
         outline: none;
     }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 
@@ -83,7 +128,7 @@ input:focus::-webkit-input-placeholder {
 
 .sheet-character-sheet {
     display: block;
-    position: relative;
+    /* position: relative; */
     width: 850px;
     min-height: 1300px;
     margin: 0 auto;
@@ -93,17 +138,18 @@ input:focus::-webkit-input-placeholder {
     line-height: 1.2;
     box-sizing: border-box;
     background-repeat: no-repeat, no-repeat, repeat;
-    background: #e9e8e3;
+    /* background: #e9e8e3; */
     /* background-position: 567px 580px, 0px 240px, center top; */
 }
 
 .sheet-character-sheet::before {
+    
     content: "";
     background: url(https://i.imgur.com/eg4cOm2.png);
     background-size: contain;
     background-color: #e9e8e3;
     opacity: 0.2;
-    position: absolute;
+    /* position: absolute; */
     top: 0px;
     left: 0px;
     right: 0px;
@@ -133,14 +179,14 @@ input:focus::-webkit-input-placeholder {
 }
 
 .header_inner_two {
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 /* 스위치 */
 .switch {
     position: relative;
     display: inline-block;
-    width: 40px;
+    width: 35px;
     height: 15px;
 }
 
@@ -181,12 +227,11 @@ input:focus+.slider {
 }
 
 input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
 }
 
-/* Rounded sliders */
 .slider.round {
     border-radius: 50px;
 }
@@ -196,17 +241,11 @@ input:checked+.slider:before {
 }
 
 /* 다이스 */
-
 .container {
     font-family: Arial, sans-serif;
     background: #e0e0e0;
-    /* Background to match the image provided */
-    /* padding: 10px; */
     display: inline-block;
     border-radius: 20px;
-    /* Rounded corners for the container */
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-    /* Shadow effect */
 }
 
 .label {
@@ -219,7 +258,7 @@ input:checked+.slider:before {
     outline: none;
     border-radius: 10px;
     padding: 4px 8px;
-    width: 15px;
+    width: 40px;
     text-align: center;
 
     background-color: transparent;
@@ -230,12 +269,39 @@ input:checked+.slider:before {
 
 /* 스테이터스 */
 
+.sheet-level{
+    margin-top: -10px;
+    margin-left: 10px;
+}
+.level_input {
+    font-family: 'MaplestoryOTFBold', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #fff;
+    font-size: 18px;
+    -webkit-text-stroke: 1px black;
+
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    position: relative;
+    top: 50%;
+    width: 30px;
+    text-align: center;
+    
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
 .state_input {
     background-color: transparent;
     border: none;
     box-sizing: border-box;
     position: relative;
     top: 50%;
+    width: 50px;
     text-align: center;
     margin-left: 50px;
     margin-top: 5px;
@@ -247,26 +313,19 @@ input:checked+.slider:before {
     appearance: none;
 }
 
-.state_input::-ms-clear {
-    display: none;
+.sheet-status{
+    margin-left: 40px;
+    margin-top: 30px;
 }
 
-.state_input::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+.sheet-group{
+    margin: 10px;
+    margin-bottom: 20px;
+    
 }
 
-.sheet-group strong{
-    width: 50px;
+.gradient-box{
+    display: -webkit-inline-box;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(132, 132, 132) 10%, rgb(132, 132, 132) 20%, rgba(255, 255, 255, 0) 100%);
+    
 }
-
-.sheet-status-item input[type="text"],
-.sheet-status-item input[type="number"] {
-    height: 30px;
-    width: 20%;
-    text-align: center;
-    background: transparent;
-    border-radius: 0;
-}
-
-

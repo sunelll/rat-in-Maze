@@ -22,21 +22,23 @@
                             </div>
 
                             <!-- 플레이어블 교체 -->
-                            <div class="margin15">
+                            <div class="margin15 margin_left55">
                               <label for="status_table">캐릭터</label>
-                              <label class="switch">
+                              <label class="switch margin_left15">
                                 <input type="checkbox">
                                 <span class="slider round"></span>
                                 </label>
-                              <label for="status_table">NPC</label>
+                              <label class="margin_left15" for="status_table">NPC</label>
                             </div>
 
                               <!-- 자유 다이스 -->
-                              <div class="margin15">
+                              <div class="margin15 margin_left55">
                                 <span class="label">DICE</span>
-                                <div class="container">
+                                <div class="container margin_left10">
                                   <input type="text"  class="dice_input">
                                 </div>
+
+                                <button class="margin_left15" type="roll" id="" value="[능력치]()" alt="자유다이스"></button>
                               </div>
                         </div>
                     </div>
@@ -45,22 +47,22 @@
                     
                     <div class="sheet-character-info">
                       <!-- <h1>캐릭터 이름</h1> -->
-                      <div>
-                        <div class="sheet-name">
-                            <input class="input" placeholder="캐릭터 이름" type="text" name="attr_character_name">
+                      <div style="display: -webkit-inline-box;">
+                          <div class="sheet-name margin_top40">
+                            <input class="input font26 width380" placeholder="캐릭터 이름" type="text" name="attr_character_name">
                           </div>
                           <div class="sheet-level">
-                            <label for="status_table">레벨</label>
+                            <label for="status_table" class="maple_font12">레벨</label>
                             </br>
-                            <input type="text" name="attr_character_level">
+                            <input class="level_input" placeholder="0" type="number" name="attr_level" title="레벨"/>
                           </div>
                       </div>
-                      <div class="sheet-player sheet-exp">
-                        <label for="status_table">플레이어</label>
-                        <input class="input width150" type="text" name="attr_player">
+                      <div class="sheet-player sheet-exp margin_top10">
+                        <label for="status_table">PLAYER</label>
+                        <input class="input width200" type="text" name="attr_player">
                         <label for="status_table">경험치</label>
-                        <input class="input width150" type="text" name="attr_exp">
-                        <label for="status_table"></label>
+                        <input class="input width80" type="text" name="attr_exp">
+                        <label for="status_table">EXP</label>
                       </div>
                 
                       <div>
@@ -68,20 +70,21 @@
                           <div class="sheet-group">
                             <strong class="maple">근력</strong>
                             <input class="state_input" placeholder="0" type="number" name="attr_str" title="근력"/>
+                            
                             <strong class="maple">공격</strong>
-                            <input class="state_input" type="number" name="attr_att" title="공격"/>
+                            <input class="state_input" placeholder="0" type="number" name="attr_att" title="공격"/>
                           </div>
                           <div class="sheet-group">
                             <strong class="maple">민첩</strong>
-                            <input class="state_input" type="number" name="attr_dex" title="민첩성"/>
+                            <input class="state_input" placeholder="0" type="number" name="attr_dex" title="민첩성"/>
                             <strong class="maple">장갑</strong>
-                            <input class="state_input" type="number" name="attr_armor" title="장갑"/>
+                            <input class="state_input" placeholder="0" type="number" name="attr_armor" title="장갑"/>
                           </div>
                           <div class="sheet-group">
                             <strong class="maple">정신</strong>
-                            <input class="state_input" type="number" name="attr_pow" title="정신력"/>
+                            <input class="state_input" placeholder="0" type="number" name="attr_pow" title="정신력"/>
                             <strong class="maple">건강</strong>
-                            <input class="state_input" type="number" name="attr_con" title="건강"/>
+                            <input class="state_input" placeholder="0" type="number" name="attr_con" title="건강"/>
                           </div>
                         </div>
                       </div>
@@ -94,16 +97,17 @@
                 
                       <div class="">
                         <label for="start_table">시작특성</label>
+                        <select name="feature" id="start_feature">
+                          <option value="1">야생의 피</option>
+                          <option value="2">손재주</option>
+                          <option value="3">곡예사</option>
+                          <option value="4">은밀함</option>
+                      </select>
+                        <hr color="gray">
                       </div>
                     </div>
                 
                     <div class="sheet-character-status">
-                        <select name="" id="">
-                            <option value="1">야생의 피</option>
-                            <option value="2">손재주</option>
-                            <option value="3">곡예사</option>
-                            <option value="4">은밀함</option>
-                        </select>
                         <h4>공격 보너스</h4>
                         <p>모든 공격 판정에 +1</p>
                         <button type="roll" id="start_table" value="[시작특성]()" alt="시작특성"></button>
@@ -112,11 +116,9 @@
                         <p>생성한 주문 이름</p>
                         <input type="text" name="attr_weapon">
                 
-                        <h4>야생의 피</h4>
-                        <p>추적, 채집, 생존술 이점</p>
+                        <h4 id="feature_title">야생의 피</h4>
+                        <p id="feature_description">추적, 채집, 생존술 이점</p>
                 
-                        <!-- <h4>손재주</h4>
-                        <p>수리, 열쇠따기, 소매치기 이점</p> -->
                     </div>
                 </div>
             </div>
@@ -136,11 +138,11 @@
                     
                         <div class="sheet-items">
                           <span><img src="https://i.imgur.com/mgtfXRB.png" alt="" /></span>
-                          <input type="number" name="attr_ins_item1" placeholder="진통제" title="진통제">
+                          <input type="number" name="attr_weapon" placeholder="무기" title="무기">
                           <span><img src="https://i.imgur.com/Gf1XU7T.png" alt="" /></span>
-                          <input type="number" name="attr_ins_item2" placeholder="무기" title="무기">
+                          <input type="number" name="aattr_armor" placeholder="갑옷" title="갑옷">
                           <span><img src="https://i.imgur.com/3obfPrm.png" alt="" /></span>
-                          <input type="number" name="attr_ins_item3" placeholder="부적" title="부적">
+                          <input type="number" name="attr_shield" placeholder="방패" title="방패">
                         </div>
 
                         <input type="text" name="attr_weapon">
@@ -259,23 +261,39 @@
               
                 </div>
               
-              </div>
+            </div>
 
         </div>
 
 
-<script type="text/worker">
+        <script>
+          document.getElementById('start_feature').addEventListener('change', function() {
+  var featureTitle = document.getElementById('feature_title');
+  var featureDescription = document.getElementById('feature_description');
+  switch (this.value) {
+    case '1':
+      featureTitle.innerText = '야생의 피';
+      featureDescription.innerText = '추적, 채집, 생존술 이점';
+      break;
+    case '2':
+      featureTitle.innerText = '손재주';
+      featureDescription.innerText = '손재주가 뛰어나 도구 사용이 용이';
+      break;
+    case '3':
+      featureTitle.innerText = '곡예사';
+      featureDescription.innerText = '유연하고 민첩하여 위험을 잘 피함';
+      break;
+    case '4':
+      featureTitle.innerText = '은밀함';
+      featureDescription.innerText = '숨기와 은폐에 능숙';
+      break;
+    default:
+      featureTitle.innerText = '특성을 선택해주세요.';
+      featureDescription.innerText = '선택된 특성의 설명이 여기에 표시됩니다.';
+  }
+});
 
-  on("change:changer", function() {
-		getAttrs(["changer"], function(values) {
-      setAttrs({chk:values.changer});
-		});
-	});
-
-</script>
-
-
-
+        </script>
 
     </body>
 </html>
