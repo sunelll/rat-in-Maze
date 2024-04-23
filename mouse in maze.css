@@ -7,8 +7,13 @@
     font-style: normal;
 }
 
-.maple,
-.state_input {
+/* 옵티크
+font-family: optique-display, sans-serif;
+font-style: normal;
+font-weight: 400; */
+
+.sheet-maple,
+.sheet-state_input {
     font-family: 'MaplestoryOTFBold', sans-serif;
     font-weight: normal;
     font-style: normal;
@@ -18,7 +23,7 @@
     /* text-stroke: 1px black; */
 }
 
-.maple_font12{
+.sheet-maple_font12{
     font-family: 'MaplestoryOTFBold', sans-serif;
     font-weight: normal;
     font-style: normal;
@@ -28,16 +33,20 @@
     /* text-stroke: 1px black; */
 }
 
-.arvo {
+.sheet-arvo {
     font-family: 'Arvo';
     font-size: 18px;
 }
 
-.font26{
+.sheet-inline-block{
+    display: inline-block;
+}
+
+.sheet-font26{
     font-size: 26px;
 }
 
-.inline {
+.sheet-inline {
     display: inline;
 }
 
@@ -45,54 +54,85 @@
     text-align: center;
 }
 
-.width80 {
+.sheet-width80 {
     width: 80px;
 }
 
-.width150 {
+.sheet-width150 {
     width: 150px;
 }
 
-.width200 {
+.sheet-width200 {
     width: 200px;
 }
 
-.width380 {
+.sheet-width380 {
     width: 380px;
     height: 55px;
 }
 
-.margin15 {
+.sheet-margin15 {
     margin: 15px;
 }
 
-.margin_top10 {
+.sheet-margin_top10 {
     margin-top: 10px;
 }
 
-.margin_top40 {
+.sheet-margin_top40 {
     margin-top: 40px;
 }
 
-.margin_left10{
+.sheet-margin_left10{
     margin-left: 10px;
 }
 
-.margin_left15{
+.sheet-margin_left15{
     margin-left: 15px;
 }
 
+.sheet-margin_left30{
+    margin-left: 30px;
+}
 
-.margin_left55{
+.sheet-margin_left55{
     margin-left: 50px;
 }
 
+.sheet-margin_left80{
+    margin-left: 80px;
+}
+
+.sheet-margin_right10{
+    margin-right: 10px;
+}
+
+.sheet-margin_right30{
+    margin-right: 30px;
+}
+
+h4{
+    margin-bottom: -5px;
+}
+
+
 /****************************************************
-	Section1 : 
+	Header
 ****************************************************/
 
 
-.input {
+.sheet-diamond {
+    width: 70px;
+    height: 70px;
+    background-color: #666666;
+    transform: rotate(45deg);
+    margin-top: -50px;
+    margin-bottom: 20px;
+    margin-left: 160px;
+}
+
+
+.sheet-input {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid #CCC;
@@ -106,27 +146,27 @@
         outline: none;
     }
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+.sheet-input::-webkit-outer-spin-button,
+.sheet-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type='number'] {
+.sheet-input[type='number'] {
   -moz-appearance: textfield;
 }
 
 
-input::-webkit-input-placeholder {
+.sheet-input::-webkit-input-placeholder {
     color: #AAA;
 }
 
-input:focus::-webkit-input-placeholder {
+.sheet-input:focus::-webkit-input-placeholder {
     color: #AAA;
 }
 
 
-.sheet-character-sheet {
+.sheet-wrap {
     display: block;
     /* position: relative; */
     width: 850px;
@@ -142,7 +182,7 @@ input:focus::-webkit-input-placeholder {
     /* background-position: 567px 580px, 0px 240px, center top; */
 }
 
-.sheet-character-sheet::before {
+.sheet-wrap::before {
     
     content: "";
     background: url(https://i.imgur.com/eg4cOm2.png);
@@ -165,38 +205,39 @@ input:focus::-webkit-input-placeholder {
 .sheet-info-kind-img>img {
     width: 180px;
     height: 250px;
-    background: black;
+    background: #c5c1bb;
     margin-top: 75px;
     margin-left: 25px;
+    object-fit: cover;
 }
 
 .sheet-header {
     display: flex;
 }
 
-.header_inner_one {
+.sheet-header-inner-one {
     width: 350px;
 }
 
-.header_inner_two {
+.sheet-header_inner_two {
     margin-top: 60px;
 }
 
 /* 스위치 */
-.switch {
+.sheet-switch {
     position: relative;
     display: inline-block;
     width: 35px;
     height: 15px;
 }
 
-.switch input {
+.sheet-switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-.slider {
+.sheet-slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -208,7 +249,7 @@ input:focus::-webkit-input-placeholder {
     transition: .4s;
 }
 
-.slider:before {
+.sheet-slider:before {
     position: absolute;
     content: "";
     height: 15px;
@@ -219,11 +260,11 @@ input:focus::-webkit-input-placeholder {
 }
 
 input:checked+.slider {
-    background-color: #2196F3;
+    background-color: #888888;
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #888888;
 }
 
 input:checked+.slider:before {
@@ -232,27 +273,27 @@ input:checked+.slider:before {
     transform: translateX(20px);
 }
 
-.slider.round {
+.sheet-slider.round {
     border-radius: 50px;
 }
 
-.slider.round:before {
+.sheet-slider.round:before {
     border-radius: 50%;
 }
 
 /* 다이스 */
-.container {
+.sheet-container {
     font-family: Arial, sans-serif;
     background: #e0e0e0;
     display: inline-block;
     border-radius: 20px;
 }
 
-.label {
+.sheet-label {
     color: #333;
 }
 
-.dice_input {
+.sheet-dice_input {
     font-size: 10px;
     border: none;
     outline: none;
@@ -268,12 +309,11 @@ input:checked+.slider:before {
 }
 
 /* 스테이터스 */
-
-.sheet-level{
+.sheet-sheet-level{
     margin-top: -10px;
     margin-left: 10px;
 }
-.level_input {
+.sheet-level_input {
     font-family: 'MaplestoryOTFBold', sans-serif;
     font-weight: normal;
     font-style: normal;
@@ -284,8 +324,7 @@ input:checked+.slider:before {
     background-color: transparent;
     border: none;
     box-sizing: border-box;
-    position: relative;
-    top: 50%;
+    position: relative; 
     width: 30px;
     text-align: center;
     
@@ -295,7 +334,7 @@ input:checked+.slider:before {
 }
 
 
-.state_input {
+.sheet-state_input {
     background-color: transparent;
     border: none;
     box-sizing: border-box;
@@ -306,26 +345,69 @@ input:checked+.slider:before {
     margin-left: 50px;
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-right: 30px;
+    /* margin-right: 30px; */
 
     -moz-appearance: textfield;
     -webkit-appearance: none;
     appearance: none;
 }
 
-.sheet-status{
-    margin-left: 40px;
+.sheet-sheet-status{
+    margin-left: 10px;
     margin-top: 30px;
 }
 
-.sheet-group{
+.sheet-sheet-group{
     margin: 10px;
     margin-bottom: 20px;
     
 }
 
-.gradient-box{
+.sheet-gradient-box{
     display: -webkit-inline-box;
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(132, 132, 132) 10%, rgb(132, 132, 132) 20%, rgba(255, 255, 255, 0) 100%);
     
+}
+
+/* 시작 특성 */
+
+.sheet-start-state {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/****************************************************
+	Section1 : 
+****************************************************/
+
+
+
+
+
+/****************************************************
+	Section2 : 
+****************************************************/
+
+.sheet-weapon, .sheet-armor, .sheet-shield{
+    padding: 5px 10px;
+    font-size: 12px;
+    color: white;
+    background-color: lightgray;
+    border: none;
+    border-radius: 5px;
+}
+
+.sheet-active {
+    background-color: gray;
+  }
+
+
+/****************************************************
+	Section3 : 
+****************************************************/
+
+#section3 {
+    display: flex;
+    justify-content: space-between;
 }
