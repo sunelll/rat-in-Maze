@@ -11,371 +11,432 @@
 
 
   <!-- sheet- -->
-  <div class="sheet-wrap">
+	<div class="sheet-wrap">
 
-    <!-- Section1 -->
-    <div id="section1" class="sheet-header">
-      <div class="sheet-header-inner-one">
-        <div class="sheet-info-kind-img">
-          <img name="attr_character_avatar" />
-        </div>
-        <div class="sheet-info-kind">
-          <div>
-            <div class="sheet-diamond">
-              <input class="sheet-input sheet-width50" placeholder="체력" type="text" name="attr_hp">
-              <img>
-            </div>
-            <!-- 종족 및 직업 -->
-            <div class="sheet-margin15 sheet-margin_left30">
-              <input class="sheet-input sheet-width80" placeholder="종족" type="text" name="attr_kind">
-              <span>/</span>
-              <input class="sheet-input sheet-width80" placeholder="직업" type="text" name="attr_job">
-            </div>
+		<!-- Section1 -->
+		<div id="section1" class="sheet-section1 sheet-header">
+		<div class="sheet-header-inner-one">
+			<div class="sheet-info-kind-img">
+			<img name="attr_character_avatar" />
+			</div>
+			<div class="sheet-info-kind">
+			<div>
+				<div class="sheet-diamond">
+				<input class="sheet-input sheet-width50" placeholder="체력" type="text" name="attr_hp">
+				<img>
+				</div>
+				<!-- 종족 및 직업 -->
+				<div class="sheet-margin15 sheet-margin_left30">
+				<input class="sheet-input sheet-width80" placeholder="종족" type="text" name="attr_kind">
+				<span>/</span>
+				<input class="sheet-input sheet-width80" placeholder="직업" type="text" name="attr_job">
+				</div>
 
-            
-            <div class="sheet-margin_left30">
-              <input class="sheet-input sheet-width150" placeholder="소유 골드" type="text" name="attr_gold">
-              <p class="sheet-inline-block">G</p>
-              </br>
-              <input class="sheet-input" placeholder="장소" type="text" name="attr_location">
-            </div>
+				
+				<div class="sheet-margin_left30">
+				<input class="sheet-input sheet-width150" placeholder="소유 골드" type="text" name="attr_gold">
+				<p class="sheet-inline-block">G</p>
+				</br>
+				<input class="sheet-input" placeholder="장소" type="text" name="attr_location">
+				</div>
 
-            <!-- 플레이어블 교체 -->
-            <div class="sheet-margin15 sheet-margin_left55">
-              <p class="sheet-inline-block">캐릭터</p>
-              <p class="sheet-switch sheet-margin_left15">
-                <input type="checkbox">
-                <span class="sheet-slider sheet-round"></span>
-              </p>
-              <p class="sheet-inline-block">NPC</p>
-            </div>
+				<!-- 플레이어블 교체 -->
+				<div class="sheet-margin15 sheet-margin_left55">
+				<p class="sheet-inline-block">캐릭터</p>
+				<p class="sheet-switch sheet-margin_left15">
+					<input type="checkbox">
+					<span class="sheet-slider sheet-round"></span>
+				</p>
+				<p class="sheet-inline-block">NPC</p>
+				</div>
 
-            <!-- 자유 다이스 -->
-            <div class="sheet-margin15 sheet-margin_left55">
-              <span class="sheet-label">자유 DICE</span>
-              <div class="sheet-container sheet-margin_left10">
-                <input type="text" class="sheet-dice_input">
-              </div>
-              <button class="sheet-margin_left15" type="roll" id="" value="[능력치]()" alt="자유다이스"></button>
-            </div>
+				<!-- 자유 다이스 -->
+				<div class="sheet-margin15 sheet-margin_left55">
+					<span class="sheet-label">자유 DICE</span>
+					<div class="sheet-container sheet-margin_left10">
+						<input type="text" class="sheet-dice_input" name="attr_free_dice_input">
+					</div>
+					<button class="sheet-margin_left15" type="roll" value="&{template:default} {{name=자유다이스}} {{roll=[[@{free_dice_input}]]}}" alt="자유다이스"></button>
+				</div>
 
-            <!-- 반응표는 npc일때만 -->
-            <p>반응표</p>
-            <p>행동순서/무작위표</p>
+				<!-- 반응표는 npc일때만 -->
+				<p>반응표</p>
+				<p>행동순서/무작위표</p>
 
-            
+				
 
-          </div>
-        </div>
-      </div>
-      <div class="header_inner_two">
+			</div>
+			</div>
+		</div>
+		<div class="header_inner_two">
 
-        <div class="sheet-character-info">
+			<div class="sheet-character-info">
 
-          <!-- 이름 기입 -->
-          <div class="sheet-webkit-inline">
-            <div class="sheet-name sheet-margin_top10">
-              <input class="sheet-input sheet-font26 sheet-width380" style="height: 50px;" placeholder="캐릭터 이름" type="text"
-                name="attr_character_name">
-            </div>
-            <div class="sheet-level sheet-inline-block">
-              <p for="level" class="sheet-maple_font12">레벨</p>
-              <br>
-              <input class="sheet-level_input" placeholder="0" type="number" name="attr_level" title="레벨" />
-            </div>
-          </div>
-          <div class="sheet-player sheet-exp sheet-margin_top10">
-            <p class="sheet-inline-block">PLAYER</p>
-            <input class="sheet-input sheet-width200" type="text" name="attr_player">
-            <p class="sheet-inline-block">경험치</p>
-            <input id="exp_input" class="sheet-input sheet-width80" type="number" name="attr_exp">
-            <p class="sheet-inline-block">EXP</p>
+			<!-- 이름 기입 -->
+			<div class="sheet-webkit-inline">
+				<div class="sheet-name sheet-margin_top10">
+				<input class="sheet-input sheet-font26 sheet-width380" style="height: 50px;" placeholder="캐릭터 이름" type="text"
+					name="attr_character_name">
+				</div>
+				<div class="sheet-level sheet-inline-block">
+				<p for="level" class="sheet-maple_font12">레벨</p>
+				<br>
+				<input class="sheet-level_input" placeholder="0" type="number" name="attr_level" title="레벨" />
+				</div>
+			</div>
+			<div class="sheet-player sheet-exp sheet-margin_top10">
+				<p class="sheet-inline-block">PLAYER</p>
+				<input class="sheet-input sheet-width200" type="text" name="attr_player">
+				<p class="sheet-inline-block">경험치</p>
+				<input id="exp_input" class="sheet-input sheet-width80" type="number" name="attr_exp">
+				<p class="sheet-inline-block">EXP</p>
 
-          </div>
+			</div>
 
-          <!-- 스테이터스 -->
-          <div class="sheet-status sheet-status-item">
-            <div class="sheet-group">
-              <strong class="maple">근력</strong>
-              <input class="state_input margin_right30" placeholder="0" type="number" name="attr_str" title="근력" />
-              <strong class="maple ">공격</strong>
-              <input class="state_input" placeholder="0" type="number" name="attr_att" title="공격" />
-              <strong class="maple margin_right10">+</strong>
-              <strong class="maple" id="bonus_attack">0</strong>
-            </div>
-            <div class="sheet-group">
-              <strong class="maple">민첩</strong>
-              <input class="state_input margin_right30" placeholder="0" type="number" name="attr_dex" title="민첩성" />
-              <strong class="maple">장갑</strong>
-              <input class="state_input" placeholder="0" value="6" type="number" name="attr_armor" title="장갑" />
-              <strong class="maple margin_right10">+</strong>
-              <strong class="maple" id="bonus_armor">0</strong>
-            </div>
-            <div class="sheet-group">
-              <strong class="maple">정신</strong>
-              <input class="state_input margin_right30" placeholder="0" type="number" name="attr_pow" title="정신력" />
-              <strong class="maple">건강</strong>
-              <input class="state_input" placeholder="0" value="4" type="number" name="attr_con" title="건강" />
-              <strong class="maple margin_right10">+</strong>
-              <strong class="maple" id="bonus_con">0</strong>
-            </div>
-          </div>
-        </div>
+			<!-- 스테이터스 -->
+			<div class="sheet-status sheet-status-item">
+				<div class="sheet-group">
+				<strong class="maple">근력</strong>
+				<input class="state_input margin_right30" placeholder="0" type="number" name="attr_str" title="근력" />
+				<strong class="maple ">공격</strong>
+				<input class="state_input" placeholder="0" type="number" name="attr_att" title="공격" />
+				<strong class="maple margin_right10">+</strong>
+				<strong class="maple" id="bonus_attack">0</strong>
+				</div>
+				<div class="sheet-group">
+				<strong class="maple">민첩</strong>
+				<input class="state_input margin_right30" placeholder="0" type="number" name="attr_dex" title="민첩성" />
+				<strong class="maple">장갑</strong>
+				<input class="state_input" placeholder="0" value="6" type="number" name="attr_armor" title="장갑" />
+				<strong class="maple margin_right10">+</strong>
+				<strong class="maple" id="bonus_armor">0</strong>
+				</div>
+				<div class="sheet-group">
+				<strong class="maple">정신</strong>
+				<input class="state_input margin_right30" placeholder="0" type="number" name="attr_pow" title="정신력" />
+				<strong class="maple">건강</strong>
+				<input class="state_input" placeholder="0" value="4" type="number" name="attr_con" title="건강" />
+				<strong class="maple margin_right10">+</strong>
+				<strong class="maple" id="bonus_con">0</strong>
+				</div>
+			</div>
+			</div>
 
-        <!-- 시작 특성 -->
-        <hr color="gray">
-        <div class="sheet-character-status">
-          <div>
-            <label for="start_table">시작특성</label>
-            <select name="feature" id="start_feature" name="attr_feature">
-              <option value="1">-</option>
-              <option value="2">공격 보너스</option>
-              <option value="3">주문 1개</option>
-              <option value="4">야생의 피</option>
-              <option value="5">손재주</option>
-              <option value="6">곡예사</option>
-              <option value="7">은밀함</option>
-            </select>
-          </div>
-
-
-          <div class="start-state">
-            <h4 id="sheet-feature_title" class="sheet-inline-block">특성을 선택해주세요</h4>
-            <p id="sheet-feature_description" class="sheet-inline-block" name="attr-state-description">현재 선택된 특성 없음</p>
-          </div>
-
-          <div class="start-state">
-            <h4 id="level_title">레벨 특성</h4>
-            <p id="level_description" class="sheet-inline-block" name="attr_level_description">-</p>
-          </div>
-
-          <div class="start-state">
-            <h4 id="state_title">보너스 유무</h4>
-            <p id="state_description" class="sheet-inline-block">-</p>
-          </div>
-
-          
-          
-          <div class="sheet-start-state">
-            <h4 class="sheet-inline-block">주문</h4>
-            <div>
-              <span class="label">실패 DICE</span>
-              <button class="sheet-margin_left15" type="roll" id="" value="[능력치]()" alt="실패다이스"></button>
-            </div>
-          </div>
-
-          <br>
-          <div class="sheet-start-state">
-            <input type="text" name="title_magic" placeholder="주문 이름">
-            <input type="text" name="attr_magic" placeholder="주문 내용" style="width: 80%;">
-            <button class="sheet-margin_left15" type="roll" id="" value="[능력치]()" alt="주문 다이스"></button>
-          </div>
-
-          <div class="start-state">
-            <p></p>
-            <button class="sheet-margin_left15" type="roll" id="" value="[능력치]()" alt="추가버튼">+add</button>
-          </div>
-
-          </br>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section2 -->
-    <div id="section2" class="sheet-outer sheet-margin_left80">
-      <div class="sheet-wrap">
-        <!-- 전투장비탭 -->
-        <h2>전투 장비</h2>
-        <div class="sheet-battle">
-          <div class="sheet-battle_inner sheet-inline-block">
-            <div class="sheet-equipment">
-
-              <div class="sheet-items">
-                <input type="number" name="attr_weapon" placeholder="무기" title="무기">
-                <button id="light_weapon_btn" class="sheet-weapon" onclick="toggleWeapon('light_weapon_btn')">가벼움</button>
-                <button id="heavy_weapon_btn" class="sheet-weapon" onclick="toggleWeapon('heavy_weapon_btn')">무거움</button>
-                <button id="long_weapon_btn" class="sheet-weapon" onclick="toggleWeapon('long_weapon_btn')">장거리</button>
-                </br>
-                <input type="number" name="attr_armor" placeholder="갑옷" title="갑옷">
-                <button id="light_armor_btn" class="sheet-armor" onclick="toggleArmor('light_armor_btn')">가벼움</button>
-                <button id="heavy_armor_btn" class="sheet-armor" onclick="toggleArmor('heavy_armor_btn')">무거움</button>
-                </br>
-                <input type="number" name="attr_shield" placeholder="방패" title="방패">
-                <button id="light_shield_btn" class="sheet-shield" onclick="toggleShield('light_shield_btn')">가벼움</button>
-                <button id="heavy_shield_btn" class="sheet-shield" onclick="toggleShield('heavy_shield_btn')">무거움</button>
-              </div>
-
-            </div>
-          </div>
+			<!-- 시작 특성 -->
+			<hr color="gray">
+			<div class="sheet-character-status">
+			<div>
+				<label for="start_table">시작특성</label>
+				<select name="feature" id="start_feature" name="attr_feature">
+				<option value="1">-</option>
+				<option value="2">공격 보너스</option>
+				<option value="3">주문 1개</option>
+				<option value="4">야생의 피</option>
+				<option value="5">손재주</option>
+				<option value="6">곡예사</option>
+				<option value="7">은밀함</option>
+				</select>
+			</div>
 
 
+			<div class="start-state">
+				<h4 id="sheet-feature_title" class="sheet-inline-block">시작 특성</h4>
+				<textarea id="sheet-feature_description" class="sheet-inline-block sheet-textarea" name="attr_feature_description" readonly rows="1">현재 선택된 특성 없음</textarea>
 
-          <div class="sheet-costbox">
-            <div class="sheet-hpmax">
-              <input type="number" name="attr_hp_max" placeholder="0" />
-              <p><img src="https://i.imgur.com/pdUU6RI.png" alt="선제권" /></p>
-            </div>
-            </div>
-            <div class="sheet-charge">
-              <input type="number" name="attr_charge" placeholder="0" min="0" max="10" />
-              <button type="roll" value="/r (@{charge} + ?{라운드 수})d6s
-              &{template:stellaDice}{{name=@{character_name}}}{{title=차지주사위}}"><img src="https://i.imgur.com/yhs9KhP.png" alt="선제권" /></button>
-            </div>
-            <div class="sheet-attack">
-              <input type="number" name="attr_attack" placeholder="0" min="0" max="10" />
-              <button type="roll" value="&{template:stellaDice}{{name=@{character_name}}}{{title=공격주사위}}{{counter=[[@{attack}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}{{roll4=[[1d6]]}}{{roll5=[[1d6]]}}{{roll6=[[1d6]]}}{{roll7=[[1d6]]}}{{roll8=[[1d6]]}}{{roll9=[[1d6]]}}{{roll10=[[1d6]]}}">
-                <img src="https://i.imgur.com/pCaPhdP.png" alt="이점" /></button>
-            </div>
-          </div>
+			</div>
+
+			<div class="start-state">
+				<h4 id="level_title">레벨 특성</h4>
+				<textarea id="level_description" class="sheet-inline-block sheet-textarea" name="attr_level_description" readonly rows="1">-</textarea>
+
+			</div>
+
+			<div class="start-state">
+				<h4 id="state_title">보너스 유무</h4>
+				<textarea id="bonus_description" class="sheet-inline-block sheet-textarea" name="attr_bonus_description" readonly rows="1">-</textarea>
+			</div>
+
+			
+			
+			<div class="sheet-start-state">
+				<h4 class="sheet-inline-block">주문</h4>
+				<div>
+				<span class="label">실패 DICE</span>
+				<button class="sheet-margin_left15" type="roll" id="" value="[능력치]()" alt="실패다이스"></button>
+				</div>
+			</div>
+
+			<br>
+			<div class="sheet-start-state">
+				<input type="text" name="title_magic" placeholder="주문 이름">
+				<input type="text" name="attr_magic" placeholder="주문 내용" style="width: 80%;">
+				<button class="sheet-margin_left15" type="roll" id="" value="[능력치]()" alt="주문 다이스"></button>
+			</div>
+
+			<div class="start-state">
+				<div class="repcontrol" data-groupname="repeating_skills">
+					<button class="btn repcontrol_add">+Add</button>
+					<button class="btn repcontrol_edit">Modify</button>
+				</div>
+			</div>
+
+			</br>
+			</div>
+		</div>
+		</div>
+
+		<!-- Section2 -->
+		<div id="section2" class="sheet-section2">
+			<div class="sheet-inner-two"></div>
+		</div>
+
+		<!-- Section3 -->
+		<div id="section2" class="sheet-section2">
+			<div class="sheet-inner-three"></div>
+		</div>
+
+		<!-- Section4 -->
+		<div id="section4" class="sheet-section4 sheet-outer sheet-margin_left80">
+			<div class="sheet-inner-four">
+			<!-- 전투장비탭 -->
+			<h2>전투 장비</h2>
+			<div class="sheet-battle">
+			<div class="sheet-battle_inner sheet-inline-block">
+				<div class="sheet-equipment">
+
+				<div class="sheet-items">
+					<input type="number" name="attr_weapon" placeholder="무기" title="무기">
+					<button id="light_weapon_btn" class="sheet-weapon" onclick="toggleWeapon('light_weapon_btn')">가벼움</button>
+					<button id="heavy_weapon_btn" class="sheet-weapon" onclick="toggleWeapon('heavy_weapon_btn')">무거움</button>
+					<button id="long_weapon_btn" class="sheet-weapon" onclick="toggleWeapon('long_weapon_btn')">장거리</button>
+					</br>
+					<input type="number" name="attr_armor" placeholder="갑옷" title="갑옷">
+					<button id="light_armor_btn" class="sheet-armor" onclick="toggleArmor('light_armor_btn')">가벼움</button>
+					<button id="heavy_armor_btn" class="sheet-armor" onclick="toggleArmor('heavy_armor_btn')">무거움</button>
+					</br>
+					<input type="number" name="attr_shield" placeholder="방패" title="방패">
+					<button id="light_shield_btn" class="sheet-shield" onclick="toggleShield('light_shield_btn')">가벼움</button>
+					<button id="heavy_shield_btn" class="sheet-shield" onclick="toggleShield('heavy_shield_btn')">무거움</button>
+				</div>
+
+				</div>
+			</div>
 
 
 
-          <div class="sheet-rollbtn sheet-inline-block">
-            <!-- 선제권 -->
-            <button type="roll" id="rollbtn_initiative"
-              value="&{template:initiative} {{name=@{character_name}}} {{1D6=[[1D6]]}}">
-              <img src="https://i.imgur.com/3obfPrm.png" alt="" />
-              </br>
-              <img src="https://i.imgur.com/3obfPrm.png" alt="" />
-            </button>
-            <label for="initiative_roll"></label>
+			<div class="sheet-costbox">
+				<div class="sheet-hpmax">
+				<input type="number" name="attr_hp_max" placeholder="0" />
+				<p><img src="https://i.imgur.com/pdUU6RI.png" alt="선제권" /></p>
+				</div>
+				</div>
+				<div class="sheet-charge">
+				<input type="number" name="attr_charge" placeholder="0" min="0" max="10" />
+				<button type="roll" value="/r (@{charge} + ?{라운드 수})d6s
+				&{template:stellaDice}{{name=@{character_name}}}{{title=차지주사위}}"><img src="https://i.imgur.com/yhs9KhP.png" alt="선제권" /></button>
+				</div>
+				<div class="sheet-attack">
+				<input type="number" name="attr_attack" placeholder="0" min="0" max="10" />
+				<button type="roll" value="&{template:stellaDice}{{name=@{character_name}}}{{title=공격주사위}}{{counter=[[@{attack}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}{{roll4=[[1d6]]}}{{roll5=[[1d6]]}}{{roll6=[[1d6]]}}{{roll7=[[1d6]]}}{{roll8=[[1d6]]}}{{roll9=[[1d6]]}}{{roll10=[[1d6]]}}">
+					<img src="https://i.imgur.com/pCaPhdP.png" alt="이점" /></button>
+				</div>
+			</div>
 
-            <!-- 위기판정 -->
-            <button type="roll" id="rollbtn_danger"
-              value="&{template:danger} {{name=@{character_name}}} {{2D6=[[2D6]]}}">
-              <img src="https://i.imgur.com/3obfPrm.png" alt="" />
-            </button>
-            <label for="danger_roll"></label>
 
-            <!-- 이점 -->
-            <button type="roll" id="rollbtn_advantage"
-              value="&{template:advantage} {{name=@{character_name}}} {{3D6=[[3D6]]}}">
-              <img src="https://i.imgur.com/3obfPrm.png" alt="" />
-            </button>
-            <label for="advantage_roll"></label>
 
-          </div>
+			<div class="sheet-rollbtn sheet-inline-block">
+				<!-- 선제권 -->
+				<button type="roll" id="rollbtn_initiative"
+				value="&{template:initiative} {{name=@{character_name}}} {{1D6=[[1D6]]}}">
+				<img src="https://i.imgur.com/3obfPrm.png" alt="" />
+				</br>
+				<img src="https://i.imgur.com/3obfPrm.png" alt="" />
+				</button>
+				<label for="initiative_roll"></label>
 
-        </div>
-      </div>
-    </div>
+				<!-- 위기판정 -->
+				<button type="roll" id="rollbtn_danger"
+				value="&{template:danger} {{name=@{character_name}}} {{2D6=[[2D6]]}}">
+				<img src="https://i.imgur.com/3obfPrm.png" alt="" />
+				</button>
+				<label for="danger_roll"></label>
 
-    <!-- Section3 -->
-    <div id="section3" class="sheet-outer sheet-margin_left80">
-      <!-- 휴대물품탭 -->
-      <div class="sheet-inventory-inner">
-        <div class="sheet-item">
+				<!-- 이점 -->
+				<button type="roll" id="rollbtn_advantage"
+				value="&{template:advantage} {{name=@{character_name}}} {{3D6=[[3D6]]}}">
+				<img src="https://i.imgur.com/3obfPrm.png" alt="" />
+				</button>
+				<label for="advantage_roll"></label>
 
-          <label for="advantage_roll">손(휴대)</label>
-          </br>
-          <input type="text" name="attr_deform2" placeholder="물품">
-          </br>
+			</div>
 
-          <label for="advantage_roll">착용</label>
-          </br>
-          <input type="text" name="attr_deform2" placeholder="착용 물품">
-          </br>
-          <label for="advantage_roll">허리띠</label>
-          </br>
-          <input type="text" name="attr_deform2" placeholder="물품 2가지">
-          </br>
-          <label for="advantage_roll">베낭</label>
-          </br>
-          <textarea name="attr_inventory" class="text" placeholder="상식에 어긋나지 않는 만큼 얼마든"></textarea>
-          <input type="text" name="attr_deform2">
-        </div>
+			</div>
+		</div>
 
-      </div>
+		<!-- Section5 -->
+		<div id="section5" class="sheet-section5 sheet-outer sheet-margin_left80">
+			<!-- 휴대물품탭 -->
+			<div class="sheet-inner-five sheet-inventory-inner">
+				<div class="sheet-item">
+		
+					<label for="advantage_roll">손(휴대)</label>
+					</br>
+					<input type="text" name="attr_deform2" placeholder="물품">
+					</br>
+		
+					<label for="advantage_roll">착용</label>
+					</br>
+					<input type="text" name="attr_deform2" placeholder="착용 물품">
+					</br>
+					<label for="advantage_roll">허리띠</label>
+					</br>
+					<input type="text" name="attr_deform2" placeholder="물품 2가지">
+					</br>
+					<label for="advantage_roll">베낭</label>
+					</br>
+					<textarea name="attr_inventory" class="text" placeholder="상식에 어긋나지 않는 만큼 얼마든"></textarea>
+					<input type="text" name="attr_deform2">
+				</div>
+		
+			</div>
+	
+			<div class="sheet-appinfo-inner">
+			<div class="sheet-app">
+				<label for="advantage_roll">겉모습</label>
+				<input type="text" name="attr_deform3">
+			</div>
+			<div class="sheet-app">
+				<label for="advantage_roll">신체적 특징</label>
+				<input type="text" name="attr_deform3">
+			</div>
+			<div class="sheet-app">
+				<label for="advantage_roll">뒷배경</label>
+				<input type="text" name="attr_deform3">
+			</div>
+			<div class="sheet-app">
+				<label for="advantage_roll">옷차림</label>
+				<input type="text" name="attr_deform3">
+			</div>
+			<div class="sheet-app">
+				<label for="advantage_roll">성격</label>
+				<input type="text" name="attr_deform3">
+			</div>
+			<div class="sheet-app">
+				<label for="advantage_roll">말버릇</label>
+				<input type="text" name="attr_deform3">
+			</div>
+			<div class="sheet-app">
+				<label for="advantage_roll">메모</label>
+				<textarea name="attr_inventory" class="sheet-text" placeholder="memo"></textarea>
+	
+			</div>
+			</div>
+		</div>
 
-      <div class="sheet-appinfo-inner">
-        <div class="sheet-app">
-          <label for="advantage_roll">겉모습</label>
-          <input type="text" name="attr_deform3">
-        </div>
-        <div class="sheet-app">
-          <label for="advantage_roll">신체적 특징</label>
-          <input type="text" name="attr_deform3">
-        </div>
-        <div class="sheet-app">
-          <label for="advantage_roll">뒷배경</label>
-          <input type="text" name="attr_deform3">
-        </div>
-        <div class="sheet-app">
-          <label for="advantage_roll">옷차림</label>
-          <input type="text" name="attr_deform3">
-        </div>
-        <div class="sheet-app">
-          <label for="advantage_roll">성격</label>
-          <input type="text" name="attr_deform3">
-        </div>
-        <div class="sheet-app">
-          <label for="advantage_roll">말버릇</label>
-          <input type="text" name="attr_deform3">
-        </div>
-        <div class="sheet-app">
-          <label for="advantage_roll">메모</label>
-          <textarea name="attr_inventory" class="sheet-text" placeholder="memo"></textarea>
-
-        </div>
-      </div>
-    </div>
-  </div>
+	</div>
 
   <script type="text/worker">
 
+	//시트오픈
     on("sheet:opened", function() {
       console.log("시트 페이지 로드시 최초 호출 함수란");
     });
     
+	//경험치
     on("change:exp", function() {
       console.log("경험치 내용 변경!");
       updateLevel();
     });
+
+	//시작 특성
+	on("change:feature", function(eventInfo) {
+		var featureValue = eventInfo.newValue;
+		var featureTitle = '';
+		var featureDescription = '';
+	
+		switch (featureValue) {
+		case '1':
+			featureTitle = '시작 특성을 선택해주세요.';
+			featureDescription = '현재 선택된 특성 없음';
+			break;
+		case '2':
+			featureTitle = '공격 보너스';
+			featureDescription = '모든 공격 판정에 +1';
+			break;
+		case '3':
+			featureTitle = '주문 1개';
+			featureDescription = '하루 한번, 마법표에 따른 주문 사용';
+			break;
+		case '4':
+			featureTitle = '야생의 피';
+			featureDescription = '추적, 채집, 생존술 이점';
+			break;
+		case '5':
+			featureTitle = '손재주';
+			featureDescription = '수리, 열쇠 따기, 소매치기 이점';
+			break;
+		case '6':
+			featureTitle = '곡예사';
+			featureDescription = '기어오르기, 도약하기, 균형 잡기 이점';
+			break;
+		case '7':
+			featureTitle = '은밀함';
+			featureDescription = '조용히 걷기, 그림자 속에 숨기 등에 이점';
+			break;
+		}
+	
+		// 특성 제목과 설명을 업데이트
+		setAttrs({
+		feature_title: featureTitle,
+		feature_description: featureDescription
+		});
+	});
+  
     
     // 레벨 조정
-    
-    function updateLevel() {
-      getAttrs(["exp", "level"], function(values) {
-          var exp = parseInt(values.attr_exp, 10);
-          var level = 1; // 기본 레벨
-          var description = "레벨 특성 없음";
-
-          if (exp < 2) {
-              level = 1;
-              description = "레벨 특성 없음";
-          } else if (exp < 3) {
-              level = 2;
-              description = "최대 건강 +2, 능력치 하나에 보너스 +1";
-          } else if (exp < 7) {
-              level = 3;
-              description = "최대 건강 +2, 공격 보너스+1 or 새특기 or 주문 +1";
-          } else if (exp < 13) {
-              level = 4;
-              description = "최대 건강 +2, 능력치 하나에 보너스 +1";
-          } else if (exp < 21) {
-              level = 5;
-              description = "최대 건강 +2, 공격 보너스+1 or 새특기 or 주문 +1";
-          } else if (exp < 31) {
-              level = 6;
-              description = "최대 건강 +2, 능력치 하나에 보너스 +1";
-          } else if (exp < 43) {
-              level = 7;
-              description = "최대 건강 +2, 공격 보너스+1 or 새특기 or 주문 +1";
-          } else {
-              level = 7;
-              description = "최대 건강 +2, 공격 보너스+1 or 새특기 or 주문 +1";
-          }
-
-          setAttrs({
-            attr_level: level,
-            attr_level_description: description
-        }, function() {
-            console.log("Level and Description set:", level, description);
-        });
-
-        console.log("Test Values:",  level, values);
-      });
-    }
+	function updateLevel() {
+		getAttrs(["exp", "level"], function(values) {
+			var exp = parseInt(values.exp, 10);
+			var currentLevel = parseInt(values.level, 10);
+			var newLevel = 1;
+			var description = "레벨 특성 없음";
+	
+			if (exp < 2) {
+				newLevel = 1;
+				description = "레벨 특성 없음";
+			} else if (exp < 3) {
+				newLevel = 2;
+				description = "최대 건강 +2, 능력치 하나에 보너스 +1";
+			} else if (exp < 7) {
+				newLevel = 3;
+				description = "최대 건강 +2, 공격 보너스+1 or 새특기 or 주문 +1";
+			} else if (exp < 13) {
+				newLevel = 4;
+				description = "최대 건강 +2, 능력치 하나에 보너스 +1";
+			} else if (exp < 21) {
+				newLevel = 5;
+				description = "최대 건강 +2, 공격 보너스+1 or 새특기 or 주문 +1";
+			} else if (exp < 31) {
+				newLevel = 6;
+				description = "최대 건강 +2, 능력치 하나에 보너스 +1";
+			} else if (exp < 43) {
+				newLevel = 7;
+				description = "최대 건강 +2, 공격 보너스+1 or 새특기 or 주문 +1";
+			} else {
+				newLevel = 7; 
+				description = "최대 건강 +2, 공격 보너스+1 or 새특기 or 주문 +1";
+			}
+			if (isNaN(currentLevel) || currentLevel !== newLevel) {
+				setAttrs({
+					level: newLevel,
+					level_description: description
+				}, function() {
+					console.log("Updated Level:", newLevel, "Description:", description);
+				});
+			}
+		});
+	}
+	
 
     // 시작 특성 변경 함수
     document.getElementById('start_feature').addEventListener('change', function () {
