@@ -1,439 +1,638 @@
-/* 폰트 */
+/**********************************
+	Sheet Theme Setting
+**********************************/
 
-@font-face {
-    font-family: 'MaplestoryOTFBold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    /* Font Import */
+    @font-face {
+        font-family: 'HeirofLight';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightRegular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'HeirofLight';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightBold.woff') format('woff');
+        font-weight: 800;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'MaplestoryOTFBold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+
+
+/********************************************** Color */
+:root {
+
+	/* Common Color : 공용 색상 적용 */
+	--sheet-body-back: #fff; /* 기본 배경 색상 */
+	--sheet-border-color: rgba(0,0,0,.1); /* 공통 라인 색상 */
+
+
+	/* Sheet Font : 메인 폰트 설정 (시트에 일괄 적용) */
+	--sheet-main-font:'Malgun Gothic';
+	--sheet-title-font:'Malgun Gothic';
+	--sheet-charactername-font:'HeirofLight';
+
+
+	/* Font Color : 시트 색상 적용 */
+	--sheet-text-color: #333; /* 전체 기본 폰트 */
+	--sheet-text-invert-color: #fff; /* 반전 폰트 */
+	--sheet-text-title-color: #fff; /* 타이틀 폰트 */
+	--sheet-text-point-color: #b13a3a; /* 포인트 컬러 */
+	--sheet-text-max-color: #fb6868; /* MAX 스탯 표기 컬러 */
+
+
+	/* Form Color : 폼 요소 적용 */
+	--sheet-input-color: #333; /* 폼 폰트 컬러 */
+	--sheet-input-bak: rgba(0,0,0,.1); /* 폼 배경 적용 컬러 */
+	--sheet-input-color-dark: #fff; /* 폼 배경 다크 버전 폰트 컬러 */
+	--sheet-input-bak-dark:rgba(255,255,255,.4);  /* 폼 배경 다크 버전 컬러 */
+	--sheet-text-placeholder-color: rgba(0,0,0,.4); /* 예시 텍스트 컬러 */
+	--sheet-text-placeholder-color-light: rgba(255,255,255,.4); /* 예시 텍스트 컬러 : 밝은 색상 버전 */
+	--sheet-input-check-bak: rgba(0,0,0,.05); /* 텍스트형 체크박스 기본배경 */
+	--sheet-input-check-text: rgba(0,0,0,.3); /* 텍스트형 체크박스 기본폰트 */
+	--sheet-input-check-bak-on: #333; /* 텍스트형 체크박스 활성화 배경 */
+	--sheet-input-check-text-on: #fff; /* 텍스트형 체크박스 활성화 배경 */
+	--sheet-input-check-bak-on2: #b13a3a; /* 텍스트형 체크박스 활성화 배경 : 강조컬러 */
+	--sheet-input-check-text-on2: #fff; /* 텍스트형 체크박스 활성화 배경 : 강조컬러 */
+
+	/* SpecTable : 특기표 색상 지정 */
+	--sheet-spec-bak:rgba(255,255,255,.7); /* 특기표 테이블 영역 배경 */
+	--sheet-spec-line: #000; /* 특기표 기본 라인*/
+	--sheet-spec-text: #333; /* 특기표 폰트 컬러*/
+	--sheet-spec-header-bak: #000; /* 특기표 헤더 영역 배경*/
+	--sheet-spec-header-line: #fff; /* 특기표 헤더 영역 라인*/
+	--sheet-spec-header-text: #fff; /* 특기표 헤더 폰트 컬러*/
+	--sheet-spec-sub-line: rgba(0,0,0,.2); /* 특기표 목표치 라인 */
+	--sheet-spec-sub-text: #666; /* 특기표 목표치 폰트 컬러*/
+	--sheet-spec-fear-bak: #c7a1a1; /* 공포심 배경*/
+	--sheet-spec-fear-text: #fff; /* 공포심 폰트 컬러*/
+	--sheet-spec-fear-line-sub: #fff; /* 공포심 서브 라인*/
+	--sheet-spec-fear-text-sub: #fff; /* 공포심 서브 폰트 컬러*/
+	--sheet-spec-over: rgba(0,0,0,.1); /* 마우스 오버 시 : 가로 영역 배경*/
+
+
+	/* Repeat Control : 반복 아이템 컨트롤 처리 */
+	--sheet-repeat-bak: #000;
+	--sheet-repeat-color: #fff;
 }
 
-/* 옵티크
-font-family: optique-display, sans-serif;
-font-style: normal;
-font-weight: 400; */
+/********************************************** Image */
 
-.sheet-maple,
-.sheet-state_input {
-    font-family: 'MaplestoryOTFBold', sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    color: #fff;
-    font-size: 24px;
-    -webkit-text-stroke: 1px black;
-    /* text-stroke: 1px black; */
-}
+	/* Background */
+	.sheet-insanWrap {background-image:url('https://i.imgur.com/XKhn6Tx.png') !important;}
 
-.sheet-maple_font12{
-    font-family: 'MaplestoryOTFBold', sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    color: #fff;
-    font-size: 16px;
-    -webkit-text-stroke: 1px black;
-    /* text-stroke: 1px black; */
-}
+	/* Logo */
+	.sheet-logo {height:100px; background-image:url('https://i.imgur.com/XDfvuro.png') !important;}
 
-.sheet-arvo {
-    font-family: 'Arvo';
-    font-size: 18px;
-}
+	/* Dice */
+	/* .sheet-dice {background-image:url('https://i.imgur.com/Mxx91xM.png') !important;}
+	.sheet-dice.sheet-white {background-image:url('https://i.imgur.com/YBc3GiF.png') !important;}
+	.sheet-dice.sheet-gm {background-image:url('https://i.imgur.com/zDxMYUf.png') !important;} */
 
-.sheet-inline-block{
-    display: inline-block;
-}
+	/* Spec Table */
+	.sheet-spec-top {height:30px; background-image:url('https://i.imgur.com/OHVW5xO.png') !important;}
+	.sheet-spec-bottom {height:20px;}
 
-.sheet-font26{
-    font-size: 26px;
-}
+	/* Abillity Title */
+	.sheet-abill-title {height:30px; background-image:url('https://i.imgur.com/HfgAv8U.png') !important;}
 
-.sheet-inline {
-    display: inline;
-}
+	/* Relation Title */
+	.sheet-relation-title {height:30px; background-image:url('https://i.imgur.com/yq7vKnx.png') !important;}
 
-.sheet-webkit-inline {
-    display: -webkit-inline-box;
-}
+	/* Theme Box */
+	.sheet-theme-box1 {width:71px; height:56px; background-image:url('https://i.imgur.com/BrKf4df.png') !important;} /* Status Box */
+	.sheet-theme-box2 {width:301px; height:106px; background-image:url('https://i.imgur.com/GKWySto.png') !important;} /* Inventory Box */
+	.sheet-theme-box3 {width:504px; height:106px; background-image:url('https://i.imgur.com/n5QOrhl.png') !important;} /* Past(Memo) Box */
+	.sheet-theme-box6 {width:810px; height:30px; background-image:url('https://i.imgur.com/Kx2EmFm.png') !important;} /* Spec & Fear Area */
+	.sheet-theme-box7 {width:810px; height:30px; background-image:url('https://i.imgur.com/AxnlVfd.png') !important;} /* Other Function */
+	.sheet-theme-box8 {width:810px; height:40px; background-image:url('https://i.imgur.com/lYTV52I.png') !important;} /* Respect */
 
-.text-center {
-    text-align: center;
-}
-.sheet-width50 {
-    width: 50px;
-}
+	/* Spec Checkbox */
+	.sheet-spec-check {background-image:url('https://i.imgur.com/rYNKxrY.png') !important;} /* Check Style */
+	.sheet-spec-check:checked {background-image:url('https://i.imgur.com/kkAa3vD.png') !important;} /* Check Style */
 
-.sheet-width80 {
-    width: 80px;
-}
+	.sheet-spec-check.sheet-white {background-image:url('https://i.imgur.com/IQ6y0bp.png') !important;} /* Check Style : White */
+	.sheet-spec-check.sheet-white:checked {background-image:url('https://i.imgur.com/kkAa3vD.png') !important;} /* Check Style : White */
 
-.sheet-width150 {
-    width: 150px;
-}
+	.sheet-check-flag {background-image:url('https://i.imgur.com/7fh8UJX.png') !important;}
+	.sheet-check-flag:checked {background-image:url('https://i.imgur.com/ho8id79.png') !important;}
 
-.sheet-width200 {
-    width: 200px;
-}
+	.charsheet select {background-image:url('https://i.imgur.com/zCOYkpK.png') !important;} /* select Style */
+	.charsheet select.sheet-white {background-image:url('https://i.imgur.com/VV3dRC2.png') !important; background-color:rgba(255,255,255,.2);} /* select Style : White */
 
-.sheet-width380 {
-    width: 380px;
-    height: 55px;
-}
+	/* Template */
+	.sheet-rolltemplate-Insane .sheet-template-area {border:1px solid #000; background:url('https://i.imgur.com/nz223p5.png') repeat-x #fff 0 0;}
+	.sheet-rolltemplate-Insane .sheet-name {height:24px; line-height:24px; color:#fff; background:url('https://i.imgur.com/4mlGFtu.png') no-repeat 50% 0;}
+	.sheet-rolltemplate-Insane .sheet-dice-result {color:#fff; width:90px; height:70px; line-height:70px; background:url('https://i.imgur.com/Q4adP4A.png') no-repeat 50% 50%;}
 
-.sheet-margin15 {
-    margin: 15px;
-}
-
-.sheet-margin_top10 {
-    margin-top: 10px;
-}
-
-.sheet-margin_top40 {
-    margin-top: 40px;
-}
-
-.sheet-margin_left10{
-    margin-left: 10px;
-}
-
-.sheet-margin_left15{
-    margin-left: 15px;
-}
-
-.sheet-margin_left30{
-    margin-left: 30px;
-}
-
-.sheet-margin_left55{
-    margin-left: 55px;
-}
-
-.sheet-margin_left60{
-    margin-left: 60px;
-}
-
-.sheet-margin_left80{
-    margin-left: 80px;
-}
-
-.sheet-margin_right10{
-    margin-right: 10px;
-}
-
-.sheet-margin_right30{
-    margin-right: 30px;
-}
-
-h4{
-    margin-bottom: -5px;
-}
-
-/* .sheet-wrap{
-    background-color: #e9e8e4;
-} */
 
 /****************************************************
-	Header
+	Reset
 ****************************************************/
 
+	select, div, button, textarea, span, input, img, label{box-sizing: border-box; outline:0; appearance:none !important; -webkit-appearance:none !important;}
+	.ui-dialog .charsheet {padding:0;}
+	.charsheet * {box-sizing:border-box; font-size:12px;}
+	.charsheet p {margin:0;}
+	.charsheet input,
+	.charsheet textarea,
+	.charsheet select,
+	.charsheet .uneditable-input {margin:0; padding:0; max-width:100%;}
+	.charsheet input[type="text"],
+	.charsheet input[type="number"],
+	.charsheet select {border:none; background:transparent; vertical-align:middle;}
+	.charsheet input[type="number"]::-webkit-outer-spin-button,
+	.charsheet input[type="number"]::-webkit-inner-spin-button {appearance:none; -webkit-appearance:none; margin:0;}
+	.charsheet select,
+	.charsheet input[type="checkbox"],
+	.charsheet input[type="radio"],
+	.charsheet button {cursor:pointer; border:none;}
+	.charsheet button {border:none; background-color:transparent; text-shadow:none !important; border-radius:0 !important; box-shadow:none !important; -webkit-box-shadow:none !important; padding:0 !important; margin:0 !important;}
+	.charsheet button:before {display:none !important;}
+	.charsheet input:-internal-autofill-selected {background-color:transparent !important; appearance:none !important; -webkit-appearance:none !important;}
+	.charsheet select {padding-right:17px; padding-left:10px; background-repeat:no-repeat !important; background-position:top 50% right 5px !important;}
+	.charsheet select * {color:#000 !important;}
+	.charsheet textarea {display:block; position:relative; padding:5px 0; line-height:1.7; border:none; background:transparent; resize:none; width:100%;}
 
-.sheet-diamond {
-    width: 110px;
-    height: 100px;
-    background: url(https://imgur.com/372XTj1.png);
-    margin-top: -75px;
-    margin-bottom: 20px;
-    margin-left: 185px;
-    position: relative;
-    transform: scale(1.2);
-}
 
-.sheet-diamond img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .sheet-diamond input {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'MaplestoryOTFBold', sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    color: #fff;
-    font-size: 24px;
-    -webkit-text-stroke: 1px black;
-  }
+/****************************************************
+	Default Layout
+****************************************************/
 
-.sheet-input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #CCC;
-    color: #555;
-    box-sizing: border-box;
-    height: 25px;
-    position: relative;
-    text-align: center;
+	.sheet-insanWrap {display:block; position:relative; width:850px; padding:0 20px 50px; overflow:hidden; margin:0 auto; background:no-repeat 50% 0% var(--sheet-body-back); background-size:100% auto; box-sizing:border-box;}
+	.sheet-insanWrap * {color:var(--sheet-text-color); font-weight:400; font-family:var(--sheet-main-font), sans-serif; outline:none !important;}
 
-    &:focus {
+	.sheet-left {float:left;}
+	.sheet-right {float:right;}
+
+	.sheet-txt-center {text-align:center !important;}
+	.sheet-txt-left {text-align:left !important;}
+	.sheet-txt-right {text-align:right !important;}
+
+	.sheet-head,
+	*[class*="sheet-section"] {position:relative; clear:both; z-index:0; margin-bottom:5px;}
+	.sheet-head:after,
+	*[class*="sheet-section"]:after {content:""; display:block; clear:both;}
+
+	.sheet-insanWrap input[type="text"],
+	.sheet-insanWrap input[type="number"],
+	.sheet-insanWrap select {color:var(--sheet-input-color); height:25px; background:var(--sheet-input-bak); border-radius:10px;}
+	.sheet-insanWrap textarea {color:var(--sheet-text-color);}
+
+	.sheet-insanWrap input[type="text"]::placeholder,
+	.sheet-insanWrap input[type="number"]::placeholder {color:var(--sheet-text-placeholder-color);}
+	.sheet-insanWrap textarea::placeholder {color:var(--sheet-text-placeholder-color) !important;}
+
+	.sheet-dice {width:25px; height:25px; background:no-repeat 50% 50%; background-position:50% 50% !important; background-color:transparent !important; vertical-align:middle;}
+	.sheet-dice.sheet-small {width:20px; height:20px; background-size:15px auto;}
+
+	.sheet-txt-check {position:relative;}
+	.sheet-txt-check input[type="checkbox"] {display:block; position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100% !important; z-index:1; opacity:0;}
+	.sheet-txt-check span {display:block; position:relative; z-index:0;}
+	.sheet-txt-check input[type="checkbox"]:checked + span {font-weight:600;}
+
+	.sheet-spec-check {width:20px !important; height:20px; border:none; z-index:1; cursor:pointer; background:no-repeat 50% 50%;}
+	.sheet-spec-check:checked + * {font-weight:600;}
+
+	.sheet-insanWrap fieldset {margin:0; padding:0; border:none;}
+	.sheet-insanWrap .repcontainer.editmode .repitem .itemcontrol {z-index:990 !important; height:auto; top:0; bottom:0; left:0;}
+	.sheet-insanWrap .repcontainer.editmode .repitem .itemcontrol button,
+	.sheet-insanWrap .repcontainer.editmode .repitem .itemcontrol a {width:30px; height:30px; border:none; border-radius:0; line-height:30px; padding:0; text-align:center;}
+	.sheet-insanWrap .repcontainer.editmode .repitem .itemcontrol button {background:red;}
+
+	.sheet-insanWrap .repcontrol {display:block; position:relative; overflow:hidden; background:var(--sheet-repeat-bak); border-radius:9em; font-size:11px;}
+	.sheet-insanWrap .repcontrol:before {content:""; display:block; position:absolute; width:1px; top:5px; bottom:5px; left:50%; background:var(--sheet-repeat-color); opacity:.5;}
+	.sheet-insanWrap .repcontrol > * {height:25px; line-height:25px; padding:0 10px !important; font-size:11px; font-weight:400; color:var(--sheet-repeat-color); background:var(--sheet-repeat-bak);}
+
+    .sheet-font26{font-size: 26px;}
+    .text-center {text-align: center;}
+
+    .sheet-inline-block{display: inline-block;}
+    .sheet-inline {display: inline;}
+
+    .sheet-webkit-inline {display: -webkit-inline-box;}
+    .sheet-width50 {width: 50px;}
+
+    .sheet-width80 {
+        width: 80px;
+    }
+
+    .sheet-width150 {
+        width: 150px;
+    }
+
+    .sheet-width200 {
+        width: 200px;
+    }
+
+    .sheet-width345 {
+        width: 345px;
+    }
+
+    .sheet-width380 {
+        width: 380px;
+        height: 55px;
+    }
+
+    .sheet-margin15 {
+        margin: 15px;
+    }
+
+    .sheet-margin_top10 {
+        margin-top: 10px;
+    }
+
+    .sheet-margin_top40 {
+        margin-top: 40px;
+    }
+
+    .sheet-margin_left10{
+        margin-left: 10px;
+    }
+
+    .sheet-margin_left15{
+        margin-left: 15px;
+    }
+
+    .sheet-margin_left30{
+        margin-left: 30px;
+    }
+
+    .sheet-margin_left55{
+        margin-left: 55px;
+    }
+
+    .sheet-margin_left60{
+        margin-left: 60px;
+    }
+
+    .sheet-margin_left80{
+        margin-left: 80px;
+    }
+
+    .sheet-margin_right10{
+        margin-right: 10px;
+    }
+
+    .sheet-margin_right30{
+        margin-right: 30px;
+    }
+
+    .sheet-margin_right60{
+        margin-right: 60px;
+    }
+
+    h4{margin-bottom: -5px;}
+
+/****************************************************
+    Header
+****************************************************/
+
+    .sheet-maple,
+    .sheet-state_input {
+        font-family: 'MaplestoryOTFBold', sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        color: #fff;
+        font-size: 24px;
+        -webkit-text-stroke: 1px black;
+        /* text-stroke: 1px black; */
+    }
+
+    .sheet-maple_font12{
+        font-family: 'MaplestoryOTFBold', sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        color: #fff;
+        font-size: 16px;
+        -webkit-text-stroke: 1px black;
+        /* text-stroke: 1px black; */
+    }
+
+    .sheet-arvo {
+        font-family: 'Arvo';
+        font-size: 18px;
+    }
+
+    .charsheet input, .charsheet textarea, .charsheet select, .charsheet .uneditable-input{
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        }
+
+    .sheet-diamond {
+        width: 110px;
+        height: 100px;
+        background: url(https://imgur.com/372XTj1.png);
+        margin-top: -75px;
+        margin-bottom: 20px;
+        margin-left: 185px;
+        position: relative;
+        transform: scale(1.2);
+    }
+
+    .sheet-diamond img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .sheet-diamond input {
+        position: absolute;
+        top: 50%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        font-family: 'MaplestoryOTFBold', sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        color: #fff;
+        font-size: 24px;
+        -webkit-text-stroke: 1px black;
+        border-width: 0;
+    }
+
+    .sheet-input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #CCC;
+        color: #555;
+        box-sizing: border-box;
+        height: 25px;
+        position: relative;
+        text-align: center;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    .sheet-input::-webkit-outer-spin-button,
+    .sheet-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+    .sheet-input[type='number'] {
+    -moz-appearance: textfield;
+    }
+
+
+    .sheet-input::-webkit-input-placeholder {
+        color: #AAA;
+    }
+
+    .sheet-input:focus::-webkit-input-placeholder {
+        color: #AAA;
+    }
+
+
+    .sheet-wrap {
+        display: block;
+        /* position: relative; */
+        width: 850px;
+        min-height: 1300px;
+        margin: 0 auto;
+        padding: 10px;
+        font-size: 12px;
+        font-family: 'Malgun Gothic';
+        line-height: 1.2;
+        box-sizing: border-box;
+        background-repeat: no-repeat, no-repeat, repeat;
+        /* background: #e9e8e3; */
+        /* background-position: 567px 580px, 0px 240px, center top; */
+    }
+
+    .sheet-wrap::before {
+        
+        content: "";
+        background: url(https://i.imgur.com/blW1EMj.png);
+        background-size: contain;
+        background-color: #e9e8e3;
+        opacity: 0.2;
+        /* position: absolute; */
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+
+    }
+
+    .sheet-info-kind,
+    .sheet-info-kind-img {
+        margin-left: 80px;
+    }
+
+    .sheet-info-kind-img>img {
+        width: 160px;
+        height: 220px;
+        background: #c5c1bb;
+        margin-top: 100px;
+        margin-left: 65px;
+        object-fit: cover;
+    }
+
+    .sheet-header {
+        display: flex;
+    }
+
+    .sheet-header-inner-one {
+        width: 350px;
+    }
+
+    .sheet-header_inner_two {
+        margin-top: 80px;
+        margin-left: 20px;
+    }
+
+    /* 스위치 */
+    .sheet-switch {
+        position: relative;
+        display: inline-block;
+        width: 35px;
+        height: 15px;
+    }
+
+    .sheet-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .sheet-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .sheet-slider:before {
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 15px;
+        background-color: white;
+        -webkit-transition: .2s;
+        transition: .2s;
+    }
+
+    input:checked+.slider {
+        background-color: #888888;
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px #888888;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+
+    .sheet-slider.round {
+        border-radius: 50px;
+    }
+
+    .sheet-slider.round:before {
+        border-radius: 50%;
+    }
+
+    /* 다이스 */
+    .sheet-container {
+        font-family: Arial, sans-serif;
+        background: #e0e0e0;
+        display: inline-block;
+        border-radius: 20px;
+    }
+
+    .sheet-label {
+        color: #333;
+    }
+
+    .sheet-level {
+        margin-top: -40px;
+    }
+
+    .sheet-dice_input {
+        font-size: 10px;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        padding: 4px 8px;
+        width: 40px;
+        text-align: center;
+
+        background-color: transparent;
+        position: relative;
+        text-align: center;
+
+    }
+
+    /* 스테이터스 */
+    .sheet-sheet-level{
+        margin-top: -10px;
+        margin-left: 10px;
+    }
+    .sheet-level_input {
+        font-family: 'MaplestoryOTFBold', sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        color: #fff;
+        font-size: 18px;
+        -webkit-text-stroke: 1px black;
+
+        background-color: transparent;
+        border: none;
+        box-sizing: border-box;
+        position: relative; 
+        width: 30px;
+        text-align: center;
+        
+        -moz-appearance: textfield;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+
+    .sheet-state_input {
+        background-color: transparent;
+        border: none;
+        box-sizing: border-box;
+        position: relative;
+        top: 50%;
+        width: 50px;
+        text-align: center;
+        margin-left: 40px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        /* margin-right: 30px; */
+
+        -moz-appearance: textfield;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .sheet-sheet-status{
+        margin-left: 35px;
+        margin-top: 30px;
+        
+    }
+
+    .sheet-sheet-group{
+        margin: 10px;
+        margin-bottom: 20px;
+        
+    }
+
+    .sheet-gradient-box{
+        display: -webkit-inline-box;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(132, 132, 132) 10%, rgb(132, 132, 132) 20%, rgba(255, 255, 255, 0) 100%);
+        
+    }
+
+    /* 시작 특성 */
+
+    .sheet-start-state {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sheet-textarea{
+        background-color: transparent;
+        border: none;
+        resize: none;
+        overflow: hidden;
+        width: 300px;
+        height: 12px;
+        overflow: hidden;
+        text-align: right;
+    }
+
+    .sheet-textarea:focus {
         outline: none;
     }
-}
-.sheet-input::-webkit-outer-spin-button,
-.sheet-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
-.sheet-input[type='number'] {
-  -moz-appearance: textfield;
-}
+    .sheet-textarea::-webkit-scrollbar {
+        display: none;
+    }
 
-
-.sheet-input::-webkit-input-placeholder {
-    color: #AAA;
-}
-
-.sheet-input:focus::-webkit-input-placeholder {
-    color: #AAA;
-}
-
-
-.sheet-wrap {
-    display: block;
-    position: relative;
-    width: 850px;
-    min-height: 1300px;
-    margin: 0 auto;
-    padding: 10px;
-    font-size: 12px;
-    font-family: 'Malgun Gothic';
-    line-height: 1.2;
-    box-sizing: border-box;
-    background-repeat: no-repeat, no-repeat, repeat;
-    /* background: #e9e8e3; */
-    /* background-position: 567px 580px, 0px 240px, center top; */
-}
-
-.sheet-wrap::before {
-    
-    content: "";
-    background: url(https://i.imgur.com/blW1EMj.png);
-    background-size: contain;
-    background-color: #e9e8e3;
-    opacity: 0.2;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-
-}
-
-.sheet-info-kind,
-.sheet-info-kind-img {
-    margin-left: 80px;
-}
-
-.sheet-info-kind-img>img {
-    width: 160px;
-    height: 220px;
-    background: #c5c1bb;
-    margin-top: 100px;
-    margin-left: 65px;
-    object-fit: cover;
-}
-
-.sheet-header {
-    display: flex;
-}
-
-.sheet-header-inner-one {
-    width: 350px;
-}
-
-.sheet-header_inner_two {
-    margin-top: 80px;
-    margin-left: 20px;
-}
-
-/* 스위치 */
-.sheet-switch {
-    position: relative;
-    display: inline-block;
-    width: 35px;
-    height: 15px;
-}
-
-.sheet-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.sheet-slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.sheet-slider:before {
-    position: absolute;
-    content: "";
-    height: 15px;
-    width: 15px;
-    background-color: white;
-    -webkit-transition: .2s;
-    transition: .2s;
-}
-
-input:checked+.slider {
-    background-color: #888888;
-}
-
-input:focus+.slider {
-    box-shadow: 0 0 1px #888888;
-}
-
-input:checked+.slider:before {
-    -webkit-transform: translateX(20px);
-    -ms-transform: translateX(20px);
-    transform: translateX(20px);
-}
-
-.sheet-slider.round {
-    border-radius: 50px;
-}
-
-.sheet-slider.round:before {
-    border-radius: 50%;
-}
-
-/* 다이스 */
-.sheet-container {
-    font-family: Arial, sans-serif;
-    background: #e0e0e0;
-    display: inline-block;
-    border-radius: 20px;
-}
-
-.sheet-label {
-    color: #333;
-}
-
-.sheet-dice_input {
-    font-size: 10px;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    padding: 4px 8px;
-    width: 40px;
-    text-align: center;
-
-    background-color: transparent;
-    position: relative;
-    text-align: center;
-
-}
-
-/* 스테이터스 */
-.sheet-sheet-level{
-    margin-top: -10px;
-    margin-left: 10px;
-}
-.sheet-level_input {
-    font-family: 'MaplestoryOTFBold', sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    color: #fff;
-    font-size: 18px;
-    -webkit-text-stroke: 1px black;
-
-    background-color: transparent;
-    border: none;
-    box-sizing: border-box;
-    position: relative; 
-    width: 30px;
-    text-align: center;
-    
-    -moz-appearance: textfield;
-    -webkit-appearance: none;
-    appearance: none;
-}
-
-
-.sheet-state_input {
-    background-color: transparent;
-    border: none;
-    box-sizing: border-box;
-    position: relative;
-    top: 50%;
-    width: 50px;
-    text-align: center;
-    margin-left: 40px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    /* margin-right: 30px; */
-
-    -moz-appearance: textfield;
-    -webkit-appearance: none;
-    appearance: none;
-}
-
-.sheet-sheet-status{
-    margin-left: 35px;
-    margin-top: 30px;
-    
-}
-
-.sheet-sheet-group{
-    margin: 10px;
-    margin-bottom: 20px;
-    
-}
-
-.sheet-gradient-box{
-    display: -webkit-inline-box;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(132, 132, 132) 10%, rgb(132, 132, 132) 20%, rgba(255, 255, 255, 0) 100%);
-    
-}
-
-/* 시작 특성 */
-
-.sheet-start-state {
-    display: flex;
-    justify-content: space-between;
-}
-
-.sheet-textarea{
-    background-color: transparent;
-    border: none;
-    resize: none;
-    overflow: hidden;
-    width: 300px;
-    height: 12px;
-    overflow: hidden;
-    text-align: right;
-}
-
-.sheet-textarea:focus {
-    outline: none;
-}
-
-.sheet-textarea::-webkit-scrollbar {
-    display: none;
-  }
-
+    .sheet-status-box{
+        background-color: #555;
+    }
 
 /****************************************************
-	Section1 : 
+    Section1 : 
 ****************************************************/
 
 
@@ -441,28 +640,29 @@ input:checked+.slider:before {
 
 
 /****************************************************
-	Section2 : 
+    Section2 : 
 ****************************************************/
 
-.sheet-weapon, .sheet-armor, .sheet-shield{
-    padding: 5px 10px;
-    font-size: 12px;
-    color: white;
-    background-color: lightgray;
-    border: none;
-    border-radius: 5px;
-}
+    .sheet-weapon, .sheet-armor, .sheet-shield{
+        padding: 5px 10px;
+        font-size: 12px;
+        color: white;
+        background-color: lightgray;
+        border: none;
+        border-radius: 5px;
+    }
 
-.sheet-active {
-    background-color: gray;
-  }
+    .sheet-active {
+        background-color: #555;
+        display: inline-block;
+    }
 
 
 /****************************************************
-	Section3 : 
+    Section3 : 
 ****************************************************/
 
-#section3 {
-    display: flex;
-    justify-content: space-between;
-}
+    #section3 {
+        display: flex;
+        justify-content: space-between;
+    }

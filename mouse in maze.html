@@ -33,7 +33,7 @@
 				</div>
 
 				
-				<div class="sheet-margin_left30">
+				<div class="sheet-margin_left60">
 				<input class="sheet-input sheet-width150" placeholder="소유 골드" type="text" name="attr_gold">
 				<p class="sheet-inline-block">G</p>
 				</br>
@@ -75,12 +75,11 @@
 			<!-- 이름 기입 -->
 			<div class="sheet-webkit-inline">
 				<div class="sheet-name sheet-margin_top10">
-				<input class="sheet-input sheet-font26 sheet-width380" style="height: 50px;" placeholder="캐릭터 이름" type="text"
+				<input class="sheet-input sheet-font26 sheet-width345" style="height: 50px;" placeholder="캐릭터 이름" type="text"
 					name="attr_character_name">
 				</div>
 				<div class="sheet-level sheet-inline-block">
 				<p for="level" class="sheet-maple_font12">레벨</p>
-				<br>
 				<input class="sheet-level_input" placeholder="0" type="number" name="attr_level" title="레벨" />
 				</div>
 			</div>
@@ -104,12 +103,16 @@
 				<strong class="maple" id="bonus_attack">0</strong>
 				</div>
 				<div class="sheet-group">
-				<strong class="maple">민첩</strong>
-				<input class="state_input margin_right30" placeholder="0" type="number" name="attr_dex" title="민첩성" />
-				<strong class="maple">장갑</strong>
-				<input class="state_input" placeholder="0" value="6" type="number" name="attr_armor" title="장갑" />
-				<strong class="maple margin_right10">+</strong>
-				<strong class="maple" id="bonus_armor">0</strong>
+					<div class="sheet-status-box">
+						<strong class="maple">민첩</strong>
+						<input class="state_input margin_right30" placeholder="0" type="number" name="attr_dex" title="민첩성" />
+					</div>
+					<div class="sheet-status-box">
+						<strong class="maple">장갑</strong>
+						<input class="state_input" placeholder="0" value="6" type="number" name="attr_armor" title="장갑" />
+						<strong class="maple margin_right10">+</strong>
+						<strong class="maple" id="bonus_armor">0</strong>
+					</div>
 				</div>
 				<div class="sheet-group">
 				<strong class="maple">정신</strong>
