@@ -75,7 +75,7 @@
 			<!-- 이름 기입 -->
 			<div class="sheet-webkit-inline">
 				<div class="sheet-name sheet-margin_top10">
-				<input class="sheet-input sheet-font26 sheet-width345" style="height: 50px;" placeholder="캐릭터 이름" type="text"
+				<input class="sheet-input sheet-font26 sheet-width3" style="height: 50px;" placeholder="캐릭터 이름" type="text"
 					name="attr_character_name">
 				</div>
 				<div class="sheet-level sheet-inline-block">
@@ -199,51 +199,52 @@
 		</div>
 
 		<!-- Section4 -->
+		<h2>전투 장비</h2>
 		<div id="section4" class="sheet-section4 sheet-outer sheet-margin_left80">
 			<div class="sheet-inner-four">
 			<!-- 전투장비탭 -->
-			<h2>전투 장비</h2>
-			<div class="sheet-battle">
-			<div class="sheet-battle_inner sheet-inline-block">
-				<div class="sheet-equipment">
 
-				<div class="sheet-items">
-					<input type="number" name="attr_weapon" placeholder="무기" title="무기">
-					<button id="light_weapon_btn" class="sheet-weapon" onclick="toggleWeapon('light_weapon_btn')">가벼움</button>
-					<button id="heavy_weapon_btn" class="sheet-weapon" onclick="toggleWeapon('heavy_weapon_btn')">무거움</button>
-					<button id="long_weapon_btn" class="sheet-weapon" onclick="toggleWeapon('long_weapon_btn')">장거리</button>
-					</br>
-					<input type="number" name="attr_armor" placeholder="갑옷" title="갑옷">
-					<button id="light_armor_btn" class="sheet-armor" onclick="toggleArmor('light_armor_btn')">가벼움</button>
-					<button id="heavy_armor_btn" class="sheet-armor" onclick="toggleArmor('heavy_armor_btn')">무거움</button>
-					</br>
-					<input type="number" name="attr_shield" placeholder="방패" title="방패">
-					<button id="light_shield_btn" class="sheet-shield" onclick="toggleShield('light_shield_btn')">가벼움</button>
-					<button id="heavy_shield_btn" class="sheet-shield" onclick="toggleShield('heavy_shield_btn')">무거움</button>
+				<div class="sheet-battle">
+				<div class="sheet-battle_inner sheet-inline-block">
+					<div class="sheet-equipment">
+
+					<div class="sheet-items">
+						<input type="number" name="attr_weapon" placeholder="무기" title="무기">
+						<button id="light_weapon_btn" class="sheet-weapon" onclick="toggleWeapon('light_weapon_btn')">가벼움</button>
+						<button id="heavy_weapon_btn" class="sheet-weapon" onclick="toggleWeapon('heavy_weapon_btn')">무거움</button>
+						<button id="long_weapon_btn" class="sheet-weapon" onclick="toggleWeapon('long_weapon_btn')">장거리</button>
+						</br>
+						<input type="number" name="attr_armor" placeholder="갑옷" title="갑옷">
+						<button id="light_armor_btn" class="sheet-armor" onclick="toggleArmor('light_armor_btn')">가벼움</button>
+						<button id="heavy_armor_btn" class="sheet-armor" onclick="toggleArmor('heavy_armor_btn')">무거움</button>
+						</br>
+						<input type="number" name="attr_shield" placeholder="방패" title="방패">
+						<button id="light_shield_btn" class="sheet-shield" onclick="toggleShield('light_shield_btn')">가벼움</button>
+						<button id="heavy_shield_btn" class="sheet-shield" onclick="toggleShield('heavy_shield_btn')">무거움</button>
+					</div>
+
+					</div>
 				</div>
 
-				</div>
-			</div>
 
 
-
-			<div class="sheet-costbox">
-				<div class="sheet-hpmax">
-				<input type="number" name="attr_hp_max" placeholder="0" />
-				<p><img src="https://i.imgur.com/pdUU6RI.png" alt="선제권" /></p>
-				</div>
-				</div>
-				<div class="sheet-charge">
-				<input type="number" name="attr_charge" placeholder="0" min="0" max="10" />
-				<button type="roll" value="/r (@{charge} + ?{라운드 수})d6s
-				&{template:stellaDice}{{name=@{character_name}}}{{title=차지주사위}}"><img src="https://i.imgur.com/yhs9KhP.png" alt="선제권" /></button>
-				</div>
-				<div class="sheet-attack">
-				<input type="number" name="attr_attack" placeholder="0" min="0" max="10" />
-				<button type="roll" value="&{template:stellaDice}{{name=@{character_name}}}{{title=공격주사위}}{{counter=[[@{attack}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}{{roll4=[[1d6]]}}{{roll5=[[1d6]]}}{{roll6=[[1d6]]}}{{roll7=[[1d6]]}}{{roll8=[[1d6]]}}{{roll9=[[1d6]]}}{{roll10=[[1d6]]}}">
-					<img src="https://i.imgur.com/pCaPhdP.png" alt="이점" /></button>
-				</div>
-			</div>
+				<!-- <div class="sheet-costbox">
+					<div class="sheet-hpmax">
+					<input type="number" name="attr_hp_max" placeholder="0" />
+					<p><img src="https://i.imgur.com/pdUU6RI.png" alt="선제권" /></p>
+					</div>
+					</div>
+					<div class="sheet-charge">
+					<input type="number" name="attr_charge" placeholder="0" min="0" max="10" />
+					<button type="roll" value="/r (@{charge} + ?{라운드 수})d6s
+					&{template:stellaDice}{{name=@{character_name}}}{{title=차지주사위}}"><img src="https://i.imgur.com/yhs9KhP.png" alt="선제권" /></button>
+					</div>
+					<div class="sheet-attack">
+					<input type="number" name="attr_attack" placeholder="0" min="0" max="10" />
+					<button type="roll" value="&{template:stellaDice}{{name=@{character_name}}}{{title=공격주사위}}{{counter=[[@{attack}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}{{roll4=[[1d6]]}}{{roll5=[[1d6]]}}{{roll6=[[1d6]]}}{{roll7=[[1d6]]}}{{roll8=[[1d6]]}}{{roll9=[[1d6]]}}{{roll10=[[1d6]]}}">
+						<img src="https://i.imgur.com/pCaPhdP.png" alt="이점" /></button>
+					</div>
+				</div> -->
 
 
 
@@ -303,6 +304,7 @@
 		
 			</div>
 	
+			<!-- 겉모습 -->
 			<div class="sheet-appinfo-inner">
 			<div class="sheet-app">
 				<label for="advantage_roll">겉모습</label>
